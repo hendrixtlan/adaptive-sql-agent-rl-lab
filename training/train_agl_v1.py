@@ -15,10 +15,9 @@ from pathlib import Path
 def training_rows(path: str) -> list[dict[str, str]]:
     # Keep gold SQL out of the environment metadata used by the model.
     from sqlrl.tasks import load_tasks
+    from sqlrl.public_task import PublicTask
     return [
-        {"id": task.id,
-         "task_json": json.dumps({"id": task.id, "question": task.question,
-                                  "oracle_sql": task.oracle_sql, "database": task.database, "seed": task.seed})}
+        {"id": task.id, "public_task_json": json.dumps(PublicTask.from_task(task).to_dict())}
         for task in load_tasks(path)
     ]
 
@@ -59,7 +58,7 @@ def build_config(model: str, gateway: str, key: str, batch: int = 8, group_size:
                     "fsdp_config": {"param_offload": True}},
         },
         "trainer": {"n_gpus_per_node": 1, "nnodes": 1,
-                    "project_name": "adaptive_sql_rl_lab", "experiment_name": "sql_grpo_v02",
+                    "project_name": "adaptive_sql_rl_lab", "experiment_name": "sql_grpo_v03_oracle_separated",
                     "logger": ["console"], "val_before_train": True,
                     "save_freq": 10, "test_freq": 5, "total_epochs": 2},
         "agentlightning": {
@@ -70,8 +69,8 @@ def build_config(model: str, gateway: str, key: str, batch: int = 8, group_size:
             "trace_aggregator": {"level": "trajectory",
                                  "trajectory_max_prompt_length": 2048,
                                  "trajectory_max_response_length": 2048},
-            "local": {"agent_class": "sqlrl.agent.Agent",
-                      "env_map": {"TASK_JSON": "input.task_json"}},
+            "local": {"agent_class": "sqlrl.rollout_agent.OracleSeparatedAgent",
+                      "env_map": {"PUBLIC_TASK_JSON": "input.public_task_json"}},
         },
     })
     OmegaConf.set_struct(base, False)
@@ -80,8 +79,8 @@ def build_config(model: str, gateway: str, key: str, batch: int = 8, group_size:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--train", default="data/train.jsonl")
-    parser.add_argument("--val", default="data/val.jsonl")
+    parser.add_argument("--train", default="data/v03/train.jsonl")
+    parser.add_argument("--val", default="data/v03/val.jsonl")
     parser.add_argument("--model", default=os.environ.get("SQLRL_MODEL", "Qwen/Qwen2.5-1.5B-Instruct"))
     parser.add_argument("--gateway", default=os.environ.get("AGL_GATEWAY_URL", "http://127.0.0.1:8181"))
     parser.add_argument("--batch", type=int, default=8)
@@ -105,12 +104,19 @@ def main() -> None:
         print(json.dumps({"model": args.model, "train_rows": len(train), "val_rows": len(val),
                           "group_size": args.group_size, "batch": args.batch,
                           "stage": args.stage, "curriculum_fingerprint": curriculum_manifest(train_tasks)["fingerprint"],
-                          "reward": "three_seed_verification",
-                          "agent_class": "sqlrl.agent.Agent", "status": "dry_run_ONLY_no_training"}, indent=2))
+                          "reward": "five_secret_seed_verification",
+                          "agent_class": "sqlrl.rollout_agent.OracleSeparatedAgent",
+                          "gold_in_rollout": False, "status": "dry_run_ONLY_no_training"}, indent=2))
         return
     key = os.environ.get("AGL_KEY")
     if not key:
         parser.error("Set AGL_KEY to a strong shared key")
+    reward_url = os.environ.get("SQLRL_REWARD_URL", "")
+    reward_token = os.environ.get("SQLRL_REWARD_TOKEN", "")
+    if not reward_url or len(reward_token) < 24:
+        parser.error("Start private reward server and set SQLRL_REWARD_URL and SQLRL_REWARD_TOKEN")
+    if reward_url not in {"http://127.0.0.1:8765", "http://localhost:8765"}:
+        parser.error("v0.3 local experiment requires loopback reward service port 8765")
     config = build_config(args.model, args.gateway, key, args.batch, args.group_size)
     from agentlightning.verl.entrypoint import run_ppo
     run_ppo(config, train_dataset=train, val_dataset=val)

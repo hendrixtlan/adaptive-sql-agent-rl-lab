@@ -1,3 +1,7 @@
+# ARCHIVED v0.2 GPU NOTES — USE docs/v03/gpu_runbook.md FOR v0.3
+
+This archived file describes a previous trust model; do not use it to launch v0.3.
+
 # Experimental GPU training — AGL v1.0 + verl / GRPO
 
 **Test status:** CPU unit tests and `--dry-run` completed. No Linux/CUDA AGL+verl run was executed in this release; API config may need adjustments for the exact upstream commit and driver/CUDA versions installed in your GPU environment.

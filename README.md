@@ -1,170 +1,152 @@
-# Adaptive SQL Agent — Adversarial Reinforcement Learning Lab
+# Adaptive SQL Agent — v0.3: Sealed-Oracle Agentic RL Lab
 
-**v0.2.0 · Agent Lightning v1.0 · verl · GRPO · SQLite · Python 3.11+**
+**Agent Lightning v1.0 · verl / GRPO · Hugging Face TRL SFT · Python 3.11+ · SQLite**
 
-> **Status:** the multi-domain CPU environment, robust reward, split audit, adversarial probes, curriculum builder, GRPO-signal experiment and checkpoint-comparison gate were run and tested without GPUs. Agent Lightning v1 + verl training integration is implemented but **real GPU training has NOT been run**, no model checkpoint has been produced, and no RL accuracy improvement is claimed. This is a research prototype, not a hostile-code sandbox.
+> **Verification status:** 50 CPU tests pass; 300 synthetic SQL tasks were generated, their trusted reference SQL executed correctly against five distinct hidden fixture seeds, the authenticated local reward service and the public-rollout integration were tested, and a weak rule baseline was evaluated. **NO CUDA / Agent Lightning / verl model training was performed in this environment; no trained model or RL lift is claimed.** The GPU integration remains experimental and requires upstream dependency validation.
 
-## What changed from v0.1
+v0.3 turns the previous 56-task adversarial prototype into a reproducible **Base vs SFT vs GRPO** experiment design, with a separated reward process, a 300-task synthetic benchmark, and frozen evaluation on *held-out query families* and *unseen inventory schema*. The v0.2 code, 56 original tasks, and old tests are kept for reproducibility.
 
-| Capability | v0.1 | v0.2 |
+## Why this is the next level
+
+| | v0.2 | v0.3 |
 |---|---|---|
-| Data schemas | Retail only | **Retail + support + held-out inventory** |
-| Dataset | 28 tasks | **56 tasks**: 26 train / 10 val / 10 test / 10 OOD |
-| Reward | Execution equivalence on 1 fixture | **Equivalence on 3 independent fixture seeds** |
-| Hardcoded-answer defense | None | **Oracle result checked on changed data cardinalities** |
-| SQL safety | Read-only authorizer | + **Explicit table whitelist** (e.g. deny `sqlite_master`) |
-| RL curriculum | None | **Three stages**, deterministic manifest & training `--stage` option |
-| GRPO diagnostics | Example advantages | + **Group-collapse probability sweep** for k=2/4/8/16 |
-| Evaluation | Exact-set accuracy | **Per-domain + heldout + paired bootstrap CI + security-aware promotion gate** |
-| Verification | 18 unit tests | **38 unit tests**; offline adversarial suites |
-| Packaging | Python entrypoints | + **CPU-only Docker Compose** (not run in build environment) |
+| Synthetic SQL tasks | 56 | **300** |
+| Holdouts | 10 test / 10 OOD | **48 unseen-query-family test / 60 inventory OOD** |
+| Gold data in AGL rollout payload | **Yes** (`oracle_sql`) | **No** (`id`, `question`, `database` only) |
+| Reward | Three deterministic fixtures in agent process | **Five HMAC-derived, evaluator-private fixtures via authenticated HTTP service** |
+| Control groups | Weak rule policy | **Rule policy + SFT training entrypoint + AGL GRPO entrypoint** |
+| Frozen evaluation | Single paired comparison | **Two-axis protocol-locked comparison, secret eval verifier** |
+| CPU checks | 38 tests | **50 tests, HTTP integration included** |
+| Actual model weight updates | Not run | **Not run** — CUDA stack necessary |
 
-## 1. Quickstart (CPU, no credentials)
-
-```bash
-python -m venv .venv
-source .venv/bin/activate  # PowerShell: .venv\Scripts\Activate.ps1
-python -m pip install -e .
-python -m unittest discover -s tests -v
-python -m sqlrl.cli audit-splits
-python -m sqlrl.cli robust-eval --data data/test.jsonl
-python -m sqlrl.cli robust-eval --data data/ood.jsonl
-python -m sqlrl.cli attack-suite --data data/ood.jsonl
-python -m sqlrl.cli curriculum
-python -m sqlrl.cli signal-sweep
-python training/train_agl_v1.py --dry-run --stage foundation
-```
-
-Run unit tests in a resource-limited, network-isolated Docker Compose container (optional, **Docker path not executed during packaging**):
-
-```bash
-docker compose -f compose.cpu.yml run --build --rm cpu-validation
-```
-
-## 2. Actual CPU validation snapshot (October 14, 2026)
-
-All figures below were obtained using this repository's **deliberately weak, non-learning rule policy**, NOT a pretrained/trained LLM:
-
-| Dataset | Tasks | Rule-policy strict 3-seed accuracy |
-|---|---:|---:|
-| Training (retail + support) | 26 | 4 / 26 (15.38%) |
-| Held-out test (retail + support) | 10 | 0 / 10 (0%) |
-| Inventory unseen-schema OOD | 10 | 0 / 10 (0%) |
-
-A one-seed fixed scalar can pass `score_sql(task, "SELECT <number>")` for a scalar task, while **the same candidate fails multi-seed scoring** when fixture cardinality changes. Tests explicitly demonstrate this counterexample. The offline suites observed **0 allowed-schema guard bypasses among 63 predefined OOD probes**, which is narrowly about these probes, **not a security certification**.
-
-Validation artifacts live in `artifacts/` locally. `VALIDATION.md` records the exact commands and outcomes. The folder is Git-ignored except `.gitkeep`.
-
-## 3. Reward contract
-
-Candidate SQL only sees schema and question. Oracle SQL is retained by the trusted local evaluator and NOT sent as an LLM prompt. Every reward evaluation executes the candidate and private oracle on three deterministic, distinct synthetic fixtures (same schema, independently different rows/cardinalities):
-
-```
-unsafe or execution rejected on ANY instance:          -1.00
-safe and correct on all 3 instances:                   +1.00
-safe and correct on k < 3 instances:                    0.05 + 0.65*(k/3)
-```
-
-The original one-seed reward remains available for backward-compatible diagnostics. **Real AGL agent rollouts now submit `score_sql_robust` reward**, not the legacy reward. The 3-instance verifier is still imperfect: a hardcoded answer could coincidentally match all chosen fixtures. Further hardening requires hidden evaluator seeds, randomized schema/columns and a separate score-serving trust boundary.
-
-## 4. Genuine model training (optional, GPU, not validated here)
-
-Agent Lightning v1.0 uses its **API Gateway**, **local/Kubernetes Rollout Controller**, and **verl-backed Trainer**. It is not compatible with old `LitAgent` examples. The repo's GPU route sends LLM requests through `AGL_OPENAI_BASE_URL` and posts robust scalar rewards through `AGL_EVENT_URL`. The training config uses GRPO (`algorithm.adv_estimator=grpo`), group sampling (`rollout.n=4`), rollout-level advantage and per-rollout policy-loss normalization.
-
-First dry-run all curriculum stages without installing training packages:
-
-```bash
-python training/train_agl_v1.py --dry-run --stage foundation
-python training/train_agl_v1.py --dry-run --stage joins
-python training/train_agl_v1.py --dry-run --stage reasoning
-```
-
-After installing upstream Agent Lightning v1.0 + the appropriate verl/CUDA stack **in Linux/WSL2 with a supported NVIDIA GPU**:
-
-```bash
-python -m pip install -e '.[train]'
-export AGL_KEY="$(openssl rand -hex 24)"
-export SQLRL_MODEL=Qwen/Qwen2.5-1.5B-Instruct
-bash training/run_gpu_local.sh --stage foundation
-# Later explicitly start a fresh run for --stage joins and --stage reasoning.
-```
-
-**Important:** this launcher was not GPU smoke-tested in the current environment, and the default 26 training records are insufficient for claims of research-quality RL generalization. Extend the train split substantially before serious comparisons. See [`docs/gpu_training.md`](docs/gpu_training.md).
-
-## 5. Checkpoint evaluation and promotion
-
-Serve each **frozen** base/trained checkpoint separately via an OpenAI-compatible API with the **same** sampling settings and prompt. Run each on exactly the same manifest:
-
-```bash
-export SQLRL_OPENAI_BASE_URL=http://127.0.0.1:8000/v1
-export SQLRL_MODEL=Qwen-base-checkpoint
-python -m sqlrl.cli robust-model-eval --data data/test.jsonl --output artifacts/base_test.json
-# Change the served checkpoint and SQLRL_MODEL to the trained checkpoint.
-python -m sqlrl.cli robust-model-eval --data data/test.jsonl --output artifacts/trained_test.json
-python -m sqlrl.cli compare --baseline artifacts/base_test.json --candidate artifacts/trained_test.json
-```
-
-A checkpoint comparison **rejects mismatched datasets/protocols**, calculates paired bootstrap uncertainty and checks held-out split eligibility + no increase in unsafe query rate. The approval flag is a *research gate*, not automatic deployment. A significant numerical gain on just 10 test tasks would remain fragile; evaluate many more held-out tasks and multiple training seeds.
-
-## 6. Why study zero-variance GRPO groups?
-
-When the group consists of independent binary reward samples with chance `p` of being correct and group size `k`, the theoretical probability that **all rewards are identical** is:
-
-`P(zero variance) = p^k + (1-p)^k`
-
-For `p=0.10, k=4`, about **65.62%** of groups carry no relative outcome signal. The `signal-sweep` command compares this formula with seeded Monte Carlo for group sizes 2, 4, 8 and 16. It **does not** train a network or simulate token-level policy gradients.
-
-## Architecture
+## Directory map
 
 ```text
-                           ┌─────────────────────────────┐
-training / validation ────►│ SQL agent / policy (LLM)    │
-question + schema only     │ AGL OpenAI-compatible proxy │
-                           └──────────────┬──────────────┘
-                                          │ candidate SQL
-                                          ▼
-                           ┌─────────────────────────────┐
-                           │ Trusted local reward code   │
-                           │ 3 seeds × domain fixtures   │
-                           │ Authorizer / row / VM caps  │
-                           └──────────────┬──────────────┘
-                                          │ robust reward event
-                                          ▼
-                            Agent Lightning v1 Gateway
-                                          │
-                             Rollout Controller / traces
-                                          │
-                                          ▼
-                          verl / GRPO (GPU, not executed)
-                                          │
-                           trained checkpoint (future)
-                                          │
-                        ┌─────────────────┴─────────────┐
-                        ▼                               ▼
-                    heldout test                   inventory OOD
-                        └──────────►paired bootstrap◄──┘
+src/sqlrl/
+  v03_benchmark.py       Deterministic 300-task generator with template-family holdout
+  public_task.py         Strict agent task DTO with no gold SQL/seed
+  oracle_service.py      Trusted train/val reward service, private gold, HMAC verifier seeds
+  oracle_client.py       Authenticated HTTP reward client (scalar only)
+  rollout_agent.py       Agent Lightning local-controller entrypoint (one model request, one reward)
+  agl_events.py          Agent Lightning event publisher
+  eval_v03.py            Immutable-prompt, hidden-seed frozen evaluation and dual gate
+training/
+  train_sft.py           Experimental TRL full-model SFT control arm, dry-run by default
+  train_agl_v1.py        Agent Lightning v1 + verl / GRPO integration (dry-run first)
+  run_gpu_local.sh       Experimental CUDA launcher, starts private oracle, AGL gateway, controller
+experiments/
+  v03_ablation_matrix.json   Four frozen checkpoints × three training seeds, precommitted arms
+data/v03/
+  train.jsonl            144 tasks, 8 SQL families; labeled evaluator input only
+  val.jsonl              48 tasks, same families but shifted parameters
+  test.jsonl             48 tasks, 4 entirely new SQL families
+  ood.jsonl              60 tasks, 4 new inventory query families
+  MANIFEST.json          Dataset hashes, declared splits, leakage audit
 ```
 
-`oracle_sql` is currently still passed to the agent **process** via a trusted local environment mapping, although never to the model prompt. This is a documented threat-model limitation and is **not** suitable for adversarial tool-using agents. Separate the evaluator from the rollout process before exposing arbitrary agent tools or real data. SQLite is not a hardened sandbox.
+## Run the verified CPU path (stdlib; no network access / no GPU)
 
-## Main code map
+From this repository root:
 
-- `src/sqlrl/fixtures.py`: retail, support and inventory synthetic SQLite generators.
-- `src/sqlrl/sandbox.py`: SQL read-only evaluator, table whitelist and resource limits.
-- `src/sqlrl/robust.py`: multi-seed scoring and deterministic verification seeds.
-- `src/sqlrl/adversarial.py`: attack probes including result memorization.
-- `src/sqlrl/curriculum.py`: split-leakage audit and deterministic curriculum stages.
-- `src/sqlrl/grpo.py` + `signal.py`: CPU reward-group diagnostics, no gradients.
-- `src/sqlrl/experiment.py`: paired comparison and conservative promotion gate.
-- `training/train_agl_v1.py`: experimental AGL v1 + verl GPU adapter and curriculum flag.
-- `tests/`: 38 CPU unit tests covering v0.1 and v0.2 behaviors.
-- `docs/`: technical design, security model and GPU setup.
+```bash
+PYTHONPATH=src:. python -m unittest discover -s tests -v
+PYTHONPATH=src python -m sqlrl.v03_benchmark
+PYTHONPATH=src:. python training/train_sft.py
+PYTHONPATH=src:. python training/train_agl_v1.py --dry-run --stage reasoning
+```
 
-## References
+If you prefer installing the package, create a virtual environment and install in editable mode with `pip install -e .` **in a Python environment with local build dependencies available**. The above `PYTHONPATH` commands work without installing any packages in the current verification environment.
 
-- [Agent Lightning v1.0 docs](https://microsoft.github.io/agent-lightning/stable/)
-- [AGL v1 trainer configuration](https://microsoft.github.io/agent-lightning/stable/20-trainer-configuration/)
-- [AGL v1 controller configuration](https://microsoft.github.io/agent-lightning/stable/30-controller-configuration/)
-- [verl GRPO implementation](https://github.com/verl-project/verl/blob/main/verl/trainer/ppo/core_algos.py)
+### Local private reward server (trusted internal process)
 
-This is an independently authored research lab under the MIT license, not an official Microsoft or verl repository.
+```bash
+export SQLRL_REWARD_TOKEN="$(python -c 'import secrets; print(secrets.token_hex(32))')"
+export SQLRL_VERIFIER_SECRET="$(python -c 'import secrets; print(secrets.token_hex(32))')"
+PYTHONPATH=src python -m sqlrl.oracle_service
+# Server listens ONLY on 127.0.0.1:8765. In a second shell:
+curl -sS http://127.0.0.1:8765/healthz
+```
+
+The scorer loads only the `train` and `val` gold files and **refuses to load `test` or `ood`**. Agent rollouts receive just a task ID, question and database; they never need oracle SQL. A separate verifier secret determines the five hidden scoring seeds. The reward HTTP response includes only `task_id` and a numeric `reward`. The verifier secret must **not** be passed to agent processes.
+
+**Not a hardened boundary:** local-controller subprocesses may still read files belonging to the same host user, and a token-holding client can attempt oracle probing. For adversarial or tool-executing agents, use a dedicated restricted container/pod without labeled datasets or evaluator files, enforce request quotas and network policy, and consider separate grader credentials per rollout. SQLite safety checks are not a general hostile-code sandbox. [Threat model](docs/v03/threat_model.md).
+
+## Synthetic benchmark protocol
+
+| Split | Tasks | Domains | Template families | Accessible to training? |
+|---|---:|---|---:|---|
+| Train | 144 | Retail, Support | 8 | Yes, labeled for SFT and private rewards |
+| Validation | 48 | Retail, Support | Same 8, new parameters | Yes, for selection |
+| Test | 48 | Retail, Support | **4 novel families** | **No** |
+| OOD | 60 | Inventory | **4 novel families and schema** | **No** |
+
+These families are synthetic templates, NOT independent natural-language tasks or human-written enterprise workloads. They are useful for falsifying weak systems, but optimistic certainty can arise from within-family correlations. Use multiple independent training seeds and a larger, separately curated human benchmark for research claims.
+
+## Frozen model evaluation and comparison
+
+Evaluate every frozen checkpoint separately through an OpenAI-compatible endpoint. Use the **same private `SQLRL_EVAL_SECRET`** for every checkpoint; set it independently from the training verifier key. Keep this secret off the model server/rollout environment.
+
+```bash
+export SQLRL_EVAL_SECRET="<STORE_A_PRIVATE_RANDOM_32_BYTE_KEY_OUTSIDE_THE_REPO>"
+export SQLRL_OPENAI_BASE_URL="http://127.0.0.1:8000/v1"
+export SQLRL_MODEL="Qwen/Qwen2.5-1.5B-Instruct"
+
+# Base checkpoint; model served at the endpoint above
+PYTHONPATH=src python -m sqlrl.eval_v03 evaluate --split test \
+  --checkpoint-id base-frozen --output artifacts/base_test.json
+PYTHONPATH=src python -m sqlrl.eval_v03 evaluate --split ood \
+  --checkpoint-id base-frozen --output artifacts/base_ood.json
+
+# Serve the trained checkpoint separately, then rerun with --checkpoint-id grpo-frozen
+PYTHONPATH=src python -m sqlrl.eval_v03 evaluate --split test \
+  --checkpoint-id grpo-frozen --output artifacts/grpo_test.json
+PYTHONPATH=src python -m sqlrl.eval_v03 evaluate --split ood \
+  --checkpoint-id grpo-frozen --output artifacts/grpo_ood.json
+
+PYTHONPATH=src python -m sqlrl.eval_v03 compare-suite \
+  --baseline-test artifacts/base_test.json --candidate-test artifacts/grpo_test.json \
+  --baseline-ood artifacts/base_ood.json --candidate-ood artifacts/grpo_ood.json
+```
+
+The model evaluation sets `temperature=0`, `max_tokens=384`, one attempt per task and uses **five HMAC-derived secret evaluation fixtures**, distinct from training rewards. Reports include a dataset SHA-256 fingerprint, prompt fingerprint, decoding settings and verifier-key identifier. Compare-suite refuses different protocol hashes, mismatched task sets or inconsistent model labels. The checkpoint ID is currently supplied by the operator and **not cryptographically verified against weights**; record the actual weight hashes separately for any publishable result.
+
+The research gate requires positive held-out test lift with a paired-bootstrap lower bound above zero, no OOD accuracy decrease, and no increase in unsafe SQL. **A passing gate does not constitute production approval or statistical independence.**
+
+## Real GPU work: SFT and GRPO
+
+The following commands **are not executed in the included CPU validation**. Microsoft’s official Agent Lightning v1 quick start uses a Linux environment with an A100; check pinned versions and VRAM before running. See [GPU runbook](docs/v03/gpu_runbook.md) and official [trainer docs](https://microsoft.github.io/agent-lightning/stable/20-trainer-configuration/).
+
+```bash
+# Run in a CUDA environment with TRL, datasets, transformers, compatible torch
+PYTHONPATH=src:. python training/train_sft.py --train-model \
+  --model Qwen/Qwen2.5-1.5B-Instruct \
+  --output artifacts/sft_full_checkpoint
+
+# Independently run AGL v1 with the installed verl/vLLM stack:
+export AGL_KEY="$(openssl rand -hex 24)"
+export SQLRL_REWARD_TOKEN="$(openssl rand -hex 32)"
+export SQLRL_VERIFIER_SECRET="$(openssl rand -hex 32)"
+export SQLRL_MODEL=Qwen/Qwen2.5-1.5B-Instruct
+bash training/run_gpu_local.sh --stage reasoning
+```
+
+For **SFT→GRPO**, use the SFT full checkpoint as `SQLRL_MODEL`, then run the GRPO launcher as a separate experiment. Run each arm with three distinct training seeds and record complete lineage, checkpoints, train-time costs and evaluation outputs. Current launcher uses independent stages; it does **not** implement automatic sequential curriculum resume. The upstream v1/verl GPU glue is experimental pending a real GPU smoke test.
+
+## Actual CPU validation snapshot
+
+- 50 automated tests passed, including HTTP authentication, oracle split restriction, hidden-seed scoring and a mocked end-to-end AGL event emitted from the public-only agent.
+- All 300 gold SQL queries produced correct results on five secret-derived fixtures; **this verifies the benchmark oracle**, not an LLM.
+- The deliberately weak, **non-learning** rule baseline: 0/48 family-holdout test; 0/60 inventory OOD. It attempted unsafe SQL on 24 test tasks and 60 OOD tasks. Not a performance claim about Qwen, SFT or GRPO.
+- `training/train_sft.py` and `training/train_agl_v1.py` dry-runs succeeded; **neither made any gradient updates**.
+
+See [VALIDATION.md](VALIDATION.md) for commands and constraints, [experiment protocol](docs/v03/experiment_protocol.md), and [GPU runbook](docs/v03/gpu_runbook.md).
+
+## Sources
+
+- [Microsoft Agent Lightning v1.0 architecture and basics](https://microsoft.github.io/agent-lightning/stable/05-basics/)
+- [Agent Lightning v1.0 trainer configuration](https://microsoft.github.io/agent-lightning/stable/20-trainer-configuration/)
+- [Official AGL local A100 example](https://microsoft.github.io/agent-lightning/stable/01-quick-start/)
+- [verl PPO/GRPO configuration](https://github.com/verl-project/verl/blob/main/verl/trainer/config/ppo_trainer.yaml)
+- [TRL SFTTrainer / completion-only loss](https://huggingface.co/docs/trl/main/en/sft_trainer)
+
+This independently authored educational research lab is not an official Microsoft, verl or Hugging Face release.

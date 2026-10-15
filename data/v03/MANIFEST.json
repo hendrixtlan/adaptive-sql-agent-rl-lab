@@ -1,0 +1,74 @@
+{
+  "version": "v0.3",
+  "status": "synthetic_templates_not_real_world",
+  "counts": {
+    "train": 144,
+    "val": 48,
+    "test": 48,
+    "ood": 60
+  },
+  "sha256": {
+    "train": "060d50811eb68c357a769173b0939f52f8a1b678fbc937979d386852e396ffb8",
+    "val": "f56c20774da32390e4cfe74cdd46f065911abbc4d8fc54577b4c4fd207f2cafa",
+    "test": "d9bd24fd6ca57d0dc5c092c19cdf9be13015db4b7e711f81f20f6908f6b31c91",
+    "ood": "1695f2a395a0ed684e7028f8d90381818cb1731dd8f3e0a556e417572ce9a673"
+  },
+  "query_families": {
+    "train_val": [
+      "r_status_band",
+      "r_revenue_category",
+      "r_customers_region",
+      "r_segment_month",
+      "s_ticket_state",
+      "s_priority_month",
+      "s_billable_team",
+      "s_agents_location_state"
+    ],
+    "test": [
+      "r_group_status_month",
+      "r_avg_item_price",
+      "s_avg_minutes_team",
+      "s_resolved_agents_location"
+    ],
+    "ood": [
+      "i_avail_category",
+      "i_shipped_quantity",
+      "i_available_region",
+      "i_category_unitcost"
+    ]
+  },
+  "audit": {
+    "ok": true,
+    "collisions": [],
+    "issues": [],
+    "counts": {
+      "train": 144,
+      "val": 48,
+      "test": 48,
+      "ood": 60
+    },
+    "schemas": {
+      "train": {
+        "retail": 72,
+        "support": 72
+      },
+      "val": {
+        "retail": 24,
+        "support": 24
+      },
+      "test": {
+        "retail": 24,
+        "support": 24
+      },
+      "ood": {
+        "inventory": 60
+      }
+    }
+  },
+  "known_limitations": [
+    "Template-generated questions; linguistic diversity is limited",
+    "Validation shares query families with training",
+    "Test contains held-out template families, OOD an unseen database schema",
+    "No claims about real enterprise workload performance"
+  ]
+}

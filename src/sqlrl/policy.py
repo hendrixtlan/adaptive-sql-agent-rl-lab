@@ -36,16 +36,22 @@ def build_messages(task: Task, feedback: str | None = None) -> list[dict[str, st
 
 
 class OpenAICompatiblePolicy:
-    def __init__(self, base_url: str, api_key: str, model: str = "auto", timeout: float = 90) -> None:
+    def __init__(self, base_url: str, api_key: str, model: str = "auto", timeout: float = 90,
+                 temperature: float | None = None) -> None:
         if not base_url.startswith(("http://", "https://")):
             raise ValueError("base_url must be an HTTP(S) endpoint")
         self.base_url = base_url.rstrip("/")
         self.api_key = api_key
         self.model = model
         self.timeout = timeout
+        if temperature is not None and not (0 <= temperature <= 2):
+            raise ValueError("temperature must be 0..2")
+        self.temperature = temperature
 
     def complete(self, task: Task, feedback: str | None = None) -> str:
         payload = {"model": self.model, "messages": build_messages(task, feedback), "max_tokens": 384}
+        if self.temperature is not None:
+            payload["temperature"] = self.temperature
         req = urllib.request.Request(
             f"{self.base_url}/chat/completions",
             data=json.dumps(payload).encode(),

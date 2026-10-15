@@ -1,0 +1,890 @@
+{
+  "run_type": "v03_FROZEN_EVAL_NO_WEIGHT_UPDATES",
+  "timestamp_utc": "2026-10-15T05:02:38.024477+00:00",
+  "model": "cpu-rule-baseline",
+  "checkpoint_id": "cpu-rule-baseline",
+  "split_name": "test",
+  "dataset_fingerprint": "d9bd24fd6ca57d0dc5c092c19cdf9be13015db4b7e711f81f20f6908f6b31c91",
+  "evaluation_protocol": "five_secret_seed_strict_v03",
+  "protocol_contract": {
+    "protocol_version": "v03_frozen_eval_v1",
+    "prompt_sha256": "de396a617b88b2976a28fddf5c4b8322f01fea4298ddf84bd2181c027eb6c7f6",
+    "sampling_temperature": 0.0,
+    "max_output_tokens": 384,
+    "n_hidden_seeds": 5,
+    "verifier_tag": "897e434255d6e956569a289a4095332a2abff4d310f3713047d759418a787e44",
+    "split": "test",
+    "dataset_sha256": "d9bd24fd6ca57d0dc5c092c19cdf9be13015db4b7e711f81f20f6908f6b31c91",
+    "scoring": "bag_equivalence_five_secret_seed"
+  },
+  "protocol_hash": "ec46c134dfb9243196270b7d6ff49ce47d57542f0cafbcd7e5cc60d6ece03e09",
+  "n": 48,
+  "accuracy": 0.0,
+  "unsafe_queries": 24,
+  "results": [
+    {
+      "task_id": "v3_test_r_group_status_month_00",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_group_status_month_00",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.019769000118685653
+      }
+    },
+    {
+      "task_id": "v3_test_r_group_status_month_01",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_group_status_month_01",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.019785000131378183
+      }
+    },
+    {
+      "task_id": "v3_test_r_group_status_month_02",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_group_status_month_02",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.017111000033764867
+      }
+    },
+    {
+      "task_id": "v3_test_r_group_status_month_03",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_group_status_month_03",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.018086599993694108
+      }
+    },
+    {
+      "task_id": "v3_test_r_group_status_month_04",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_group_status_month_04",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.03336520003358601
+      }
+    },
+    {
+      "task_id": "v3_test_r_group_status_month_05",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_group_status_month_05",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.01785220001693233
+      }
+    },
+    {
+      "task_id": "v3_test_r_group_status_month_06",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_group_status_month_06",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.01805060010156012
+      }
+    },
+    {
+      "task_id": "v3_test_r_group_status_month_07",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_group_status_month_07",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.017766400105756475
+      }
+    },
+    {
+      "task_id": "v3_test_r_group_status_month_08",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_group_status_month_08",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.016027600031520706
+      }
+    },
+    {
+      "task_id": "v3_test_r_group_status_month_09",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_group_status_month_09",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.017611999919608934
+      }
+    },
+    {
+      "task_id": "v3_test_r_group_status_month_10",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_group_status_month_10",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.0181005998456385
+      }
+    },
+    {
+      "task_id": "v3_test_r_group_status_month_11",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_group_status_month_11",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.017052999828592874
+      }
+    },
+    {
+      "task_id": "v3_test_r_avg_item_price_00",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_avg_item_price_00",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.016386199968110304
+      }
+    },
+    {
+      "task_id": "v3_test_r_avg_item_price_01",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_avg_item_price_01",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.017703799949231325
+      }
+    },
+    {
+      "task_id": "v3_test_r_avg_item_price_02",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_avg_item_price_02",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.02047420002782019
+      }
+    },
+    {
+      "task_id": "v3_test_r_avg_item_price_03",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_avg_item_price_03",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.01667239994276315
+      }
+    },
+    {
+      "task_id": "v3_test_r_avg_item_price_04",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_avg_item_price_04",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.017375200059177587
+      }
+    },
+    {
+      "task_id": "v3_test_r_avg_item_price_05",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_avg_item_price_05",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.01648420002311468
+      }
+    },
+    {
+      "task_id": "v3_test_r_avg_item_price_06",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_avg_item_price_06",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.020572399989760015
+      }
+    },
+    {
+      "task_id": "v3_test_r_avg_item_price_07",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_avg_item_price_07",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.017658200067671714
+      }
+    },
+    {
+      "task_id": "v3_test_r_avg_item_price_08",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_avg_item_price_08",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.01766600007613306
+      }
+    },
+    {
+      "task_id": "v3_test_r_avg_item_price_09",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_avg_item_price_09",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.016724600027373526
+      }
+    },
+    {
+      "task_id": "v3_test_r_avg_item_price_10",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_avg_item_price_10",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.01810040012060199
+      }
+    },
+    {
+      "task_id": "v3_test_r_avg_item_price_11",
+      "database": "retail",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_r_avg_item_price_11",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [],
+        "mean_latency_ms": 0.019218199940951308
+      }
+    },
+    {
+      "task_id": "v3_test_s_avg_minutes_team_00",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_avg_minutes_team_00",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_avg_minutes_team_01",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_avg_minutes_team_01",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_avg_minutes_team_02",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_avg_minutes_team_02",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_avg_minutes_team_03",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_avg_minutes_team_03",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_avg_minutes_team_04",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_avg_minutes_team_04",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_avg_minutes_team_05",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_avg_minutes_team_05",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_avg_minutes_team_06",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_avg_minutes_team_06",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_avg_minutes_team_07",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_avg_minutes_team_07",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_avg_minutes_team_08",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_avg_minutes_team_08",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_avg_minutes_team_09",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_avg_minutes_team_09",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_avg_minutes_team_10",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_avg_minutes_team_10",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_avg_minutes_team_11",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_avg_minutes_team_11",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_resolved_agents_location_00",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_resolved_agents_location_00",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_resolved_agents_location_01",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_resolved_agents_location_01",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_resolved_agents_location_02",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_resolved_agents_location_02",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_resolved_agents_location_03",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_resolved_agents_location_03",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_resolved_agents_location_04",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_resolved_agents_location_04",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_resolved_agents_location_05",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_resolved_agents_location_05",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_resolved_agents_location_06",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_resolved_agents_location_06",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_resolved_agents_location_07",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_resolved_agents_location_07",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_resolved_agents_location_08",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_resolved_agents_location_08",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_resolved_agents_location_09",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_resolved_agents_location_09",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_resolved_agents_location_10",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_resolved_agents_location_10",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_test_s_resolved_agents_location_11",
+      "database": "support",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_test_s_resolved_agents_location_11",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    }
+  ]
+}

@@ -48,12 +48,20 @@ def verification_seeds(task: Task, n: int = 3) -> tuple[int, ...]:
 
 
 def score_sql_robust(task: Task, proposed_sql: str, *, n_instances: int = 3) -> RobustScore:
+    return score_sql_with_seeds(task, proposed_sql, verification_seeds(task, n_instances))
+
+
+def score_sql_with_seeds(task: Task, proposed_sql: str, seeds: tuple[int, ...]) -> RobustScore:
+    """Verifier entrypoint for evaluator-owned hidden seeds (no model exposure)."""
+    if not 1 <= len(seeds) <= 12 or len(set(seeds)) != len(seeds):
+        raise ValueError("Need 1..12 distinct verification seeds")
+    n_instances = len(seeds)
     correct = 0
     latency = 0.0
     executed = 0
     errors = []
     safe = True
-    for seed in verification_seeds(task, n_instances):
+    for seed in seeds:
         gold = execute_readonly(task.oracle_sql, seed=seed, database=task.database)
         try:
             candidate = execute_readonly(proposed_sql, seed=seed, database=task.database)

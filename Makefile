@@ -1,28 +1,18 @@
-.PHONY: test smoke grpo train-check robust audit attacks signal verify
-
-smoke:
-	PYTHONPATH=src python -m sqlrl.cli smoke --data data/train.jsonl
-
-grpo:
-	PYTHONPATH=src python -m sqlrl.cli simulate-grpo --data data/train.jsonl
+.PHONY: test legacy-audit v03-data v03-sft-check v03-grpo-check v03-verify
 
 test:
-	PYTHONPATH=src python -m unittest discover -s tests -v
+	PYTHONPATH=src:. python -W error::ResourceWarning -m unittest discover -s tests -v
 
-train-check:
-	PYTHONPATH=src python training/train_agl_v1.py --dry-run --stage reasoning
-
-robust:
-	PYTHONPATH=src python -m sqlrl.cli robust-eval --data data/test.jsonl
-	PYTHONPATH=src python -m sqlrl.cli robust-eval --data data/ood.jsonl
-
-audit:
+legacy-audit:
 	PYTHONPATH=src python -m sqlrl.cli audit-splits
 
-attacks:
-	PYTHONPATH=src python -m sqlrl.cli attack-suite --data data/ood.jsonl
+v03-data:
+	PYTHONPATH=src python -m sqlrl.v03_benchmark
 
-signal:
-	PYTHONPATH=src python -m sqlrl.cli signal-sweep
+v03-sft-check:
+	PYTHONPATH=src:. python training/train_sft.py
 
-verify: test audit attacks signal train-check
+v03-grpo-check:
+	PYTHONPATH=src:. python training/train_agl_v1.py --dry-run --stage reasoning
+
+v03-verify: test v03-data v03-sft-check v03-grpo-check

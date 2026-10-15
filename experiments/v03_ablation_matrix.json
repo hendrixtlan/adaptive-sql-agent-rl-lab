@@ -1,0 +1,19 @@
+{
+  "experiment": "adaptive-sql-agent-v03",
+  "claim_status": "planned_GPGPU_ablation_not_executed",
+  "model_init": "Qwen/Qwen2.5-1.5B-Instruct",
+  "arms": [
+    {"name": "base", "training": "none", "starting_weights": "model_init"},
+    {"name": "sft", "training": "TRL supervised labels from train only", "starting_weights": "model_init"},
+    {"name": "grpo-from-base", "training": "AGL v1 + verl GRPO", "starting_weights": "model_init"},
+    {"name": "sft-then-grpo", "training": "AGL v1 + verl GRPO", "starting_weights": "sft_full_checkpoint"}
+  ],
+  "repeat_training_seeds": [2026, 2027, 2028],
+  "sample_group_size": 4,
+  "validation_split": "data/v03/val.jsonl",
+  "primary_test": "data/v03/test.jsonl",
+  "secondary_ood": "data/v03/ood.jsonl",
+  "promotion_precommit": "Primary test gain positive with 95% paired-bootstrap lower bound >0, no OOD regression or increase in unsafe queries; additional training seeds essential",
+  "observability": ["rollout_reward_mean", "zero_variance_fraction", "policy_kl", "n_dropped", "n_truncated", "train_token_throughput", "gpu_hours", "checkpoint_identity"],
+  "limitations": "Synthetic templated families and small datasets; this matrix does not execute training or guarantee improvements."
+}

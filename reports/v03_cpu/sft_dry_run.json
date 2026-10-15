@@ -1,0 +1,9 @@
+{
+  "arm": "sft_full_weights",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "train_examples": 144,
+  "validation_examples": 48,
+  "train_hash": "060d50811eb68c357a769173b0939f52f8a1b678fbc937979d386852e396ffb8",
+  "val_hash": "f56c20774da32390e4cfe74cdd46f065911abbc4d8fc54577b4c4fd207f2cafa",
+  "train_mode": "CPU_DRY_RUN_NO_GRADIENTS"
+}
