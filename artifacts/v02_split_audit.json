@@ -1,0 +1,28 @@
+{
+  "ok": true,
+  "collisions": [],
+  "issues": [],
+  "counts": {
+    "train": 26,
+    "val": 10,
+    "test": 10,
+    "ood": 10
+  },
+  "schemas": {
+    "train": {
+      "retail": 16,
+      "support": 10
+    },
+    "val": {
+      "retail": 6,
+      "support": 4
+    },
+    "test": {
+      "retail": 6,
+      "support": 4
+    },
+    "ood": {
+      "inventory": 10
+    }
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "run_type": "baseline_eval_robust",
+  "evaluation_protocol": "three_seed_strict",
+  "timestamp_utc": "2026-10-15T04:28:03.330319+00:00",
+  "split_name": "ood",
+  "dataset_fingerprint": "ee7f91206fc0c08f0313b007ad667c5e0470386246f38f0ca55d650d61d91d06",
+  "model": "deterministic_nonlearning",
+  "n": 10,
+  "accuracy": 0.0,
+  "mean_reward": -1.0,
+  "by_domain": {
+    "inventory": {
+      "n": 10,
+      "accuracy": 0.0
+    }
+  },
+  "results": [
+    {
+      "task_id": "ood001",
+      "database": "inventory",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "ood001",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "ood002",
+      "database": "inventory",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "ood002",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "ood003",
+      "database": "inventory",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "ood003",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "ood004",
+      "database": "inventory",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "ood004",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "ood005",
+      "database": "inventory",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "ood005",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "ood006",
+      "database": "inventory",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "ood006",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "ood007",
+      "database": "inventory",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "ood007",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "ood008",
+      "database": "inventory",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "ood008",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "ood009",
+      "database": "inventory",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "ood009",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "ood010",
+      "database": "inventory",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "ood010",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    }
+  ]
+}

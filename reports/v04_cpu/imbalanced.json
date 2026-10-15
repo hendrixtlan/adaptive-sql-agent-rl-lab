@@ -1,0 +1,68 @@
+{
+  "experiment": "v04_frozen_reward_tape_CPU_DIAGNOSTICS_ONLY",
+  "profiles": 144,
+  "scenario": "imbalanced",
+  "rollout_budget_each": 576,
+  "repetitions": 100,
+  "seed": 2026,
+  "strategy_means": {
+    "fixed": {
+      "rollouts_used": 576.0,
+      "unused_rollouts": 0.0,
+      "task_coverage": 144.0,
+      "informative_tasks": 79.56,
+      "correctness_signal_tasks": 62.01,
+      "unsafe_without_correctness_signal_tasks": 17.55,
+      "informative_per_100_rollouts": 13.8125,
+      "informative_share_of_covered": 0.5525,
+      "unsafe_rate": 0.0757
+    },
+    "large_fixed": {
+      "rollouts_used": 576.0,
+      "unused_rollouts": 0.0,
+      "task_coverage": 72.0,
+      "informative_tasks": 51.15,
+      "correctness_signal_tasks": 44.06,
+      "unsafe_without_correctness_signal_tasks": 7.09,
+      "informative_per_100_rollouts": 8.8802,
+      "informative_share_of_covered": 0.7104,
+      "unsafe_rate": 0.0763
+    },
+    "adaptive": {
+      "rollouts_used": 576.0,
+      "unused_rollouts": 0.0,
+      "task_coverage": 144.0,
+      "informative_tasks": 92.82,
+      "correctness_signal_tasks": 67.75,
+      "unsafe_without_correctness_signal_tasks": 25.07,
+      "informative_per_100_rollouts": 16.1146,
+      "informative_share_of_covered": 0.6446,
+      "unsafe_rate": 0.0591
+    }
+  },
+  "paired_differences": [
+    {
+      "candidate": "adaptive",
+      "baseline": "fixed",
+      "mean_informative_task_difference": 13.26,
+      "empirical_95pct_range": [
+        7,
+        20
+      ],
+      "candidate_wins": 100,
+      "ties": 0
+    },
+    {
+      "candidate": "adaptive",
+      "baseline": "large_fixed",
+      "mean_informative_task_difference": 41.67,
+      "empirical_95pct_range": [
+        31,
+        49
+      ],
+      "candidate_wins": 100,
+      "ties": 0
+    }
+  ],
+  "disclaimer": "Rewards are generated from fixed latent probabilities, not a language model. Variable-length groups are NOT wired into AGL/verl. This does not show policy learning, convergence or downstream accuracy."
+}

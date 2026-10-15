@@ -1,0 +1,68 @@
+{
+  "experiment": "v04_frozen_reward_tape_CPU_DIAGNOSTICS_ONLY",
+  "profiles": 144,
+  "scenario": "mostly_wrong",
+  "rollout_budget_each": 576,
+  "repetitions": 100,
+  "seed": 2026,
+  "strategy_means": {
+    "fixed": {
+      "rollouts_used": 576.0,
+      "unused_rollouts": 0.0,
+      "task_coverage": 144.0,
+      "informative_tasks": 11.87,
+      "correctness_signal_tasks": 9.16,
+      "unsafe_without_correctness_signal_tasks": 2.71,
+      "informative_per_100_rollouts": 2.0608,
+      "informative_share_of_covered": 0.0824,
+      "unsafe_rate": 0.005
+    },
+    "large_fixed": {
+      "rollouts_used": 576.0,
+      "unused_rollouts": 0.0,
+      "task_coverage": 72.0,
+      "informative_tasks": 11.37,
+      "correctness_signal_tasks": 8.76,
+      "unsafe_without_correctness_signal_tasks": 2.61,
+      "informative_per_100_rollouts": 1.974,
+      "informative_share_of_covered": 0.1579,
+      "unsafe_rate": 0.0053
+    },
+    "adaptive": {
+      "rollouts_used": 576.0,
+      "unused_rollouts": 0.0,
+      "task_coverage": 144.0,
+      "informative_tasks": 12.15,
+      "correctness_signal_tasks": 9.29,
+      "unsafe_without_correctness_signal_tasks": 2.86,
+      "informative_per_100_rollouts": 2.1094,
+      "informative_share_of_covered": 0.0844,
+      "unsafe_rate": 0.005
+    }
+  },
+  "paired_differences": [
+    {
+      "candidate": "adaptive",
+      "baseline": "fixed",
+      "mean_informative_task_difference": 0.28,
+      "empirical_95pct_range": [
+        0,
+        2
+      ],
+      "candidate_wins": 24,
+      "ties": 76
+    },
+    {
+      "candidate": "adaptive",
+      "baseline": "large_fixed",
+      "mean_informative_task_difference": 0.78,
+      "empirical_95pct_range": [
+        -7,
+        6
+      ],
+      "candidate_wins": 60,
+      "ties": 6
+    }
+  ],
+  "disclaimer": "Rewards are generated from fixed latent probabilities, not a language model. Variable-length groups are NOT wired into AGL/verl. This does not show policy learning, convergence or downstream accuracy."
+}

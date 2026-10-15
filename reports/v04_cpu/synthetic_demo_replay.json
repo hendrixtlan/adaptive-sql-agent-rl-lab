@@ -1,0 +1,201 @@
+{
+  "experiment": "v04_frozen_policy_reward_tape_REPLAY_NO_TRAINING",
+  "input": {
+    "source": "synthetic_demo_not_a_model",
+    "file_sha256": "71efecc2acdd51d43e476ce7a8b9fada9b0db422f8927c999c134fb059d6b5cc",
+    "policy_id": "SYNTHETIC_DEMO_NOT_A_MODEL",
+    "decode_id": "CPU_BERNOULLI_SEEDED",
+    "tasks": 24,
+    "records": 192,
+    "counterfactual_limit": "The recorded model behavior is frozen; no intervention or policy learning is estimated."
+  },
+  "strategies": {
+    "fixed": {
+      "strategy": "fixed",
+      "seed": 2026,
+      "budget": 96,
+      "rollouts_used": 96,
+      "unused_rollouts": 0,
+      "task_count": 24,
+      "task_coverage": 24,
+      "informative_tasks": 18,
+      "flat_tasks": 6,
+      "correctness_signal_tasks": 13,
+      "unsafe_without_correctness_signal_tasks": 5,
+      "informative_per_100_rollouts": 18.75,
+      "informative_share_of_covered": 0.75,
+      "unsafe_rate": 0.104167,
+      "family_metrics": {
+        "high_success": {
+          "covered": 6,
+          "informative": 1,
+          "rollouts": 24
+        },
+        "low_success": {
+          "covered": 6,
+          "informative": 5,
+          "rollouts": 24
+        },
+        "mid_success": {
+          "covered": 6,
+          "informative": 6,
+          "rollouts": 24
+        },
+        "unsafe_pressure": {
+          "covered": 6,
+          "informative": 6,
+          "rollouts": 24
+        }
+      },
+      "rollout_lengths": {
+        "task-0004": 4,
+        "task-0011": 4,
+        "task-0006": 4,
+        "task-0005": 4,
+        "task-0022": 4,
+        "task-0020": 4,
+        "task-0002": 4,
+        "task-0008": 4,
+        "task-0001": 4,
+        "task-0000": 4,
+        "task-0019": 4,
+        "task-0018": 4,
+        "task-0009": 4,
+        "task-0014": 4,
+        "task-0012": 4,
+        "task-0015": 4,
+        "task-0013": 4,
+        "task-0017": 4,
+        "task-0007": 4,
+        "task-0023": 4,
+        "task-0021": 4,
+        "task-0016": 4,
+        "task-0010": 4,
+        "task-0003": 4
+      },
+      "rollout_trace_digest": "84ef01ab0745ef5d51fe74540b14bbb12fa4a27c1a54a4601abc8f8b09bd76b9",
+      "interpretation": "synthetic reward collection only; no GRPO update or model accuracy"
+    },
+    "large_fixed": {
+      "strategy": "large_fixed",
+      "seed": 2026,
+      "budget": 96,
+      "rollouts_used": 96,
+      "unused_rollouts": 0,
+      "task_count": 24,
+      "task_coverage": 12,
+      "informative_tasks": 9,
+      "flat_tasks": 3,
+      "correctness_signal_tasks": 7,
+      "unsafe_without_correctness_signal_tasks": 2,
+      "informative_per_100_rollouts": 9.375,
+      "informative_share_of_covered": 0.75,
+      "unsafe_rate": 0.0625,
+      "family_metrics": {
+        "high_success": {
+          "covered": 4,
+          "informative": 1,
+          "rollouts": 32
+        },
+        "low_success": {
+          "covered": 4,
+          "informative": 4,
+          "rollouts": 32
+        },
+        "mid_success": {
+          "covered": 2,
+          "informative": 2,
+          "rollouts": 16
+        },
+        "unsafe_pressure": {
+          "covered": 2,
+          "informative": 2,
+          "rollouts": 16
+        }
+      },
+      "rollout_lengths": {
+        "task-0004": 8,
+        "task-0011": 8,
+        "task-0006": 8,
+        "task-0005": 8,
+        "task-0022": 8,
+        "task-0020": 8,
+        "task-0002": 8,
+        "task-0008": 8,
+        "task-0001": 8,
+        "task-0000": 8,
+        "task-0019": 8,
+        "task-0018": 8
+      },
+      "rollout_trace_digest": "efdf1c194c91ecb7c4e909589f381250ec88d84958cac19cc92a1db92dfac488",
+      "interpretation": "synthetic reward collection only; no GRPO update or model accuracy"
+    },
+    "adaptive": {
+      "strategy": "adaptive",
+      "seed": 2026,
+      "budget": 96,
+      "rollouts_used": 96,
+      "unused_rollouts": 0,
+      "task_count": 24,
+      "task_coverage": 24,
+      "informative_tasks": 18,
+      "flat_tasks": 6,
+      "correctness_signal_tasks": 12,
+      "unsafe_without_correctness_signal_tasks": 6,
+      "informative_per_100_rollouts": 18.75,
+      "informative_share_of_covered": 0.75,
+      "unsafe_rate": 0.0625,
+      "family_metrics": {
+        "high_success": {
+          "covered": 6,
+          "informative": 1,
+          "rollouts": 43
+        },
+        "low_success": {
+          "covered": 6,
+          "informative": 5,
+          "rollouts": 24
+        },
+        "mid_success": {
+          "covered": 6,
+          "informative": 6,
+          "rollouts": 15
+        },
+        "unsafe_pressure": {
+          "covered": 6,
+          "informative": 6,
+          "rollouts": 14
+        }
+      },
+      "rollout_lengths": {
+        "task-0004": 4,
+        "task-0011": 2,
+        "task-0006": 4,
+        "task-0005": 2,
+        "task-0022": 8,
+        "task-0020": 3,
+        "task-0002": 8,
+        "task-0008": 4,
+        "task-0001": 2,
+        "task-0000": 3,
+        "task-0019": 2,
+        "task-0018": 8,
+        "task-0009": 4,
+        "task-0014": 8,
+        "task-0012": 2,
+        "task-0015": 3,
+        "task-0013": 3,
+        "task-0017": 2,
+        "task-0007": 2,
+        "task-0023": 2,
+        "task-0021": 2,
+        "task-0016": 8,
+        "task-0010": 7,
+        "task-0003": 3
+      },
+      "rollout_trace_digest": "20865c90be65fb099c448b24ae53789050e44619572f89bf2591c9eb67508667",
+      "interpretation": "synthetic reward collection only; no GRPO update or model accuracy"
+    }
+  },
+  "warning": "Reward replay requires real recorded rollouts produced separately. It cannot establish policy improvement or predict on-policy GRPO outcomes."
+}

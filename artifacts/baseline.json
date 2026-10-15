@@ -1,0 +1,249 @@
+{
+  "run_type": "deterministic_nonlearning_baseline",
+  "timestamp_utc": "2026-10-15T04:21:54.608785+00:00",
+  "n": 16,
+  "accuracy": 0.25,
+  "mean_reward": 0.2875,
+  "results": [
+    {
+      "task_id": "t001",
+      "question": "Number of completed orders",
+      "sql": "SELECT COUNT(*) FROM orders WHERE status='completed'",
+      "score": {
+        "task_id": "t001",
+        "reward": 1.0,
+        "correct": true,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.038235999994640224,
+        "error": null
+      }
+    },
+    {
+      "task_id": "t002",
+      "question": "What is total revenue from completed orders?",
+      "sql": "SELECT ROUND(SUM(oi.quantity*oi.unit_price),2) FROM orders o JOIN order_items oi ON o.order_id=oi.order_id WHERE o.status='completed'",
+      "score": {
+        "task_id": "t002",
+        "reward": 1.0,
+        "correct": true,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.08153000001698274,
+        "error": null
+      }
+    },
+    {
+      "task_id": "t003",
+      "question": "Count orders by status",
+      "sql": "SELECT status, COUNT(*) FROM orders GROUP BY status",
+      "score": {
+        "task_id": "t003",
+        "reward": 1.0,
+        "correct": true,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 2,
+        "latency_ms": 0.05297800001358155,
+        "error": null
+      }
+    },
+    {
+      "task_id": "t004",
+      "question": "Count customers by region",
+      "sql": "SELECT region, COUNT(*) FROM customers GROUP BY region",
+      "score": {
+        "task_id": "t004",
+        "reward": 1.0,
+        "correct": true,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 4,
+        "latency_ms": 0.03606299998182294,
+        "error": null
+      }
+    },
+    {
+      "task_id": "t005",
+      "question": "How many orders were cancelled?",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "score": {
+        "task_id": "t005",
+        "reward": 0.05,
+        "correct": false,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.02037999999515705,
+        "error": null
+      }
+    },
+    {
+      "task_id": "t006",
+      "question": "How much completed-order revenue belongs to each product category?",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "score": {
+        "task_id": "t006",
+        "reward": 0.05,
+        "correct": false,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.017686000006733593,
+        "error": null
+      }
+    },
+    {
+      "task_id": "t007",
+      "question": "Completed revenue by customer region",
+      "sql": "SELECT ROUND(SUM(oi.quantity*oi.unit_price),2) FROM orders o JOIN order_items oi ON o.order_id=oi.order_id WHERE o.status='completed'",
+      "score": {
+        "task_id": "t007",
+        "reward": 0.05,
+        "correct": false,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.1338470000007419,
+        "error": null
+      }
+    },
+    {
+      "task_id": "t008",
+      "question": "Count completed orders by month",
+      "sql": "SELECT COUNT(*) FROM orders WHERE status='completed'",
+      "score": {
+        "task_id": "t008",
+        "reward": 0.05,
+        "correct": false,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.031145999997761464,
+        "error": null
+      }
+    },
+    {
+      "task_id": "t009",
+      "question": "Count completed orders placed by enterprise customers",
+      "sql": "SELECT COUNT(*) FROM orders WHERE status='completed'",
+      "score": {
+        "task_id": "t009",
+        "reward": 0.05,
+        "correct": false,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.03044400000362657,
+        "error": null
+      }
+    },
+    {
+      "task_id": "t010",
+      "question": "Number of distinct customers with a completed purchase",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "score": {
+        "task_id": "t010",
+        "reward": 0.05,
+        "correct": false,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.01601299999265393,
+        "error": null
+      }
+    },
+    {
+      "task_id": "t011",
+      "question": "What was revenue from completed orders in March 2026?",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "score": {
+        "task_id": "t011",
+        "reward": 0.05,
+        "correct": false,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.019139000016821228,
+        "error": null
+      }
+    },
+    {
+      "task_id": "t012",
+      "question": "Count products by category",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "score": {
+        "task_id": "t012",
+        "reward": 0.05,
+        "correct": false,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.017546000009360796,
+        "error": null
+      }
+    },
+    {
+      "task_id": "t013",
+      "question": "Top three products by units sold on completed orders",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "score": {
+        "task_id": "t013",
+        "reward": 0.05,
+        "correct": false,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.018186999994895814,
+        "error": null
+      }
+    },
+    {
+      "task_id": "t014",
+      "question": "Average quantity per line item for completed orders",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "score": {
+        "task_id": "t014",
+        "reward": 0.05,
+        "correct": false,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.016454000018484294,
+        "error": null
+      }
+    },
+    {
+      "task_id": "t015",
+      "question": "Count completed orders with more than one line item",
+      "sql": "SELECT COUNT(*) FROM orders WHERE status='completed'",
+      "score": {
+        "task_id": "t015",
+        "reward": 0.05,
+        "correct": false,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.03597299999569259,
+        "error": null
+      }
+    },
+    {
+      "task_id": "t016",
+      "question": "Total units ordered by product category, excluding cancelled orders",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "score": {
+        "task_id": "t016",
+        "reward": 0.05,
+        "correct": false,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.01567300000715477,
+        "error": null
+      }
+    }
+  ]
+}

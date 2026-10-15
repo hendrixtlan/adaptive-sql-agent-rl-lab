@@ -1,0 +1,99 @@
+{
+  "run_type": "deterministic_nonlearning_baseline",
+  "timestamp_utc": "2026-10-15T04:23:57.826226+00:00",
+  "n": 6,
+  "accuracy": 0.0,
+  "mean_reward": 0.05000000000000001,
+  "results": [
+    {
+      "task_id": "h001",
+      "question": "Find completed sales revenue in the west region",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "score": {
+        "task_id": "h001",
+        "reward": 0.05,
+        "correct": false,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.022652999973615806,
+        "error": null
+      }
+    },
+    {
+      "task_id": "h002",
+      "question": "Which region has the greatest completed-order revenue? Return its name and rounded revenue.",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "score": {
+        "task_id": "h002",
+        "reward": 0.05,
+        "correct": false,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.018286999988958996,
+        "error": null
+      }
+    },
+    {
+      "task_id": "h003",
+      "question": "Count customers who have no completed orders",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "score": {
+        "task_id": "h003",
+        "reward": 0.05,
+        "correct": false,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.017465999974319857,
+        "error": null
+      }
+    },
+    {
+      "task_id": "h004",
+      "question": "How many units were sold in April on completed orders?",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "score": {
+        "task_id": "h004",
+        "reward": 0.05,
+        "correct": false,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.016074000029675517,
+        "error": null
+      }
+    },
+    {
+      "task_id": "h005",
+      "question": "Count completed orders for each customer segment",
+      "sql": "SELECT COUNT(*) FROM orders WHERE status='completed'",
+      "score": {
+        "task_id": "h005",
+        "reward": 0.05,
+        "correct": false,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.0328479999893716,
+        "error": null
+      }
+    },
+    {
+      "task_id": "h006",
+      "question": "What proportion of orders were cancelled, rounded to four decimals?",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "score": {
+        "task_id": "h006",
+        "reward": 0.05,
+        "correct": false,
+        "executable": true,
+        "safe": true,
+        "predicted_rows": 1,
+        "latency_ms": 0.015533000009781972,
+        "error": null
+      }
+    }
+  ]
+}

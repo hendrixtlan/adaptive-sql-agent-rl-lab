@@ -1,0 +1,1166 @@
+{
+  "run_type": "v03_FROZEN_EVAL_NO_WEIGHT_UPDATES",
+  "timestamp_utc": "2026-10-15T05:02:38.790493+00:00",
+  "model": "cpu-rule-baseline",
+  "checkpoint_id": "cpu-rule-baseline",
+  "split_name": "ood",
+  "dataset_fingerprint": "1695f2a395a0ed684e7028f8d90381818cb1731dd8f3e0a556e417572ce9a673",
+  "evaluation_protocol": "five_secret_seed_strict_v03",
+  "protocol_contract": {
+    "protocol_version": "v03_frozen_eval_v1",
+    "prompt_sha256": "de396a617b88b2976a28fddf5c4b8322f01fea4298ddf84bd2181c027eb6c7f6",
+    "sampling_temperature": 0.0,
+    "max_output_tokens": 384,
+    "n_hidden_seeds": 5,
+    "verifier_tag": "897e434255d6e956569a289a4095332a2abff4d310f3713047d759418a787e44",
+    "split": "ood",
+    "dataset_sha256": "1695f2a395a0ed684e7028f8d90381818cb1731dd8f3e0a556e417572ce9a673",
+    "scoring": "bag_equivalence_five_secret_seed"
+  },
+  "protocol_hash": "99a65a5074dad00dd5f6e4ba9be632787b298505d4e9faab9785885bce662252",
+  "n": 60,
+  "accuracy": 0.0,
+  "unsafe_queries": 60,
+  "results": [
+    {
+      "task_id": "v3_ood_i_avail_category_00",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_avail_category_00",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_avail_category_01",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_avail_category_01",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_avail_category_02",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_avail_category_02",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_avail_category_03",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_avail_category_03",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_avail_category_04",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_avail_category_04",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_avail_category_05",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_avail_category_05",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_avail_category_06",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_avail_category_06",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_avail_category_07",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_avail_category_07",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_avail_category_08",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_avail_category_08",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_avail_category_09",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_avail_category_09",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_avail_category_10",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_avail_category_10",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_avail_category_11",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_avail_category_11",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_avail_category_12",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_avail_category_12",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_avail_category_13",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_avail_category_13",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_avail_category_14",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_avail_category_14",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_shipped_quantity_00",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_shipped_quantity_00",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_shipped_quantity_01",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_shipped_quantity_01",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_shipped_quantity_02",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_shipped_quantity_02",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_shipped_quantity_03",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_shipped_quantity_03",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_shipped_quantity_04",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_shipped_quantity_04",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_shipped_quantity_05",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_shipped_quantity_05",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_shipped_quantity_06",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_shipped_quantity_06",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_shipped_quantity_07",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_shipped_quantity_07",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_shipped_quantity_08",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_shipped_quantity_08",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_shipped_quantity_09",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_shipped_quantity_09",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_shipped_quantity_10",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_shipped_quantity_10",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_shipped_quantity_11",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_shipped_quantity_11",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_shipped_quantity_12",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_shipped_quantity_12",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_shipped_quantity_13",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_shipped_quantity_13",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_shipped_quantity_14",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_shipped_quantity_14",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_available_region_00",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_available_region_00",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_available_region_01",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_available_region_01",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_available_region_02",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_available_region_02",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_available_region_03",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_available_region_03",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_available_region_04",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_available_region_04",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_available_region_05",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_available_region_05",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_available_region_06",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_available_region_06",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_available_region_07",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_available_region_07",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_available_region_08",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_available_region_08",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_available_region_09",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_available_region_09",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_available_region_10",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_available_region_10",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_available_region_11",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_available_region_11",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_available_region_12",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_available_region_12",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_available_region_13",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_available_region_13",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_available_region_14",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_available_region_14",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_category_unitcost_00",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_category_unitcost_00",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_category_unitcost_01",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_category_unitcost_01",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_category_unitcost_02",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_category_unitcost_02",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_category_unitcost_03",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_category_unitcost_03",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_category_unitcost_04",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_category_unitcost_04",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_category_unitcost_05",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_category_unitcost_05",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_category_unitcost_06",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_category_unitcost_06",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_category_unitcost_07",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_category_unitcost_07",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_category_unitcost_08",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_category_unitcost_08",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_category_unitcost_09",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_category_unitcost_09",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_category_unitcost_10",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_category_unitcost_10",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_category_unitcost_11",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_category_unitcost_11",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_category_unitcost_12",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_category_unitcost_12",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_category_unitcost_13",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_category_unitcost_13",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "v3_ood_i_category_unitcost_14",
+      "database": "inventory",
+      "candidate_sha256": "b83e4b4007f532293f0e7dd37fdff9b02ce1eeaefa471f85a4516e9f4290f57b",
+      "score": {
+        "task_id": "v3_ood_i_category_unitcost_14",
+        "database": "inventory",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 5,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    }
+  ]
+}

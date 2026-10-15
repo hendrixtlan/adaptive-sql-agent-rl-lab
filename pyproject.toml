@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "adaptive-sql-agent-rl-lab"
-version = "0.3.0"
-description = "Sealed oracle text-to-SQL RL lab with AGL v1/verl GRPO, TRL SFT, and cross-template OOD evaluation"
+version = "0.4.0"
+description = "Signal-aware rollout-budget lab with sealed oracle, AGL v1/verl GRPO, TRL SFT, and OOD evaluation"
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [{name = "Adaptive SQL RL Lab contributors"}]

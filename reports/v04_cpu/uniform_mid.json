@@ -1,0 +1,68 @@
+{
+  "experiment": "v04_frozen_reward_tape_CPU_DIAGNOSTICS_ONLY",
+  "profiles": 144,
+  "scenario": "uniform_mid",
+  "rollout_budget_each": 576,
+  "repetitions": 100,
+  "seed": 2026,
+  "strategy_means": {
+    "fixed": {
+      "rollouts_used": 576.0,
+      "unused_rollouts": 0.0,
+      "task_coverage": 144.0,
+      "informative_tasks": 125.56,
+      "correctness_signal_tasks": 124.03,
+      "unsafe_without_correctness_signal_tasks": 1.53,
+      "informative_per_100_rollouts": 21.7986,
+      "informative_share_of_covered": 0.8719,
+      "unsafe_rate": 0.02
+    },
+    "large_fixed": {
+      "rollouts_used": 576.0,
+      "unused_rollouts": 0.0,
+      "task_coverage": 72.0,
+      "informative_tasks": 71.41,
+      "correctness_signal_tasks": 71.24,
+      "unsafe_without_correctness_signal_tasks": 0.17,
+      "informative_per_100_rollouts": 12.3976,
+      "informative_share_of_covered": 0.9918,
+      "unsafe_rate": 0.0204
+    },
+    "adaptive": {
+      "rollouts_used": 430.46,
+      "unused_rollouts": 145.54,
+      "task_coverage": 144.0,
+      "informative_tasks": 142.69,
+      "correctness_signal_tasks": 138.52,
+      "unsafe_without_correctness_signal_tasks": 4.17,
+      "informative_per_100_rollouts": 33.1972,
+      "informative_share_of_covered": 0.9909,
+      "unsafe_rate": 0.0193
+    }
+  },
+  "paired_differences": [
+    {
+      "candidate": "adaptive",
+      "baseline": "fixed",
+      "mean_informative_task_difference": 17.13,
+      "empirical_95pct_range": [
+        9,
+        24
+      ],
+      "candidate_wins": 100,
+      "ties": 0
+    },
+    {
+      "candidate": "adaptive",
+      "baseline": "large_fixed",
+      "mean_informative_task_difference": 71.28,
+      "empirical_95pct_range": [
+        69,
+        72
+      ],
+      "candidate_wins": 100,
+      "ties": 0
+    }
+  ],
+  "disclaimer": "Rewards are generated from fixed latent probabilities, not a language model. Variable-length groups are NOT wired into AGL/verl. This does not show policy learning, convergence or downstream accuracy."
+}

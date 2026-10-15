@@ -16,3 +16,13 @@ v03-grpo-check:
 	PYTHONPATH=src:. python training/train_agl_v1.py --dry-run --stage reasoning
 
 v03-verify: test v03-data v03-sft-check v03-grpo-check
+
+.PHONY: v04-sweep v04-native-filter-check v04-verify
+
+v04-sweep:
+	PYTHONPATH=src:. python training/sweep_v04.py --repetitions 100
+
+v04-native-filter-check:
+	PYTHONPATH=src:. python training/train_agl_v1.py --dry-run --native-group-filter --max-gen-batches 4
+
+v04-verify: test v04-sweep v04-native-filter-check

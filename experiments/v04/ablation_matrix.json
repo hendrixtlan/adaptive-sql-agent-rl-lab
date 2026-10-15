@@ -1,0 +1,19 @@
+{
+  "version": "0.4.0",
+  "status": "preregistered_design_GPU_NOT_RUN",
+  "primary_metric": "heldout_family_accuracy_per_generated_token",
+  "secondary_metrics": ["ood_accuracy", "unsafe_sql_rate", "gpu_hours", "rollout_reward_std", "informative_group_fraction", "cost_per_correct_sql"],
+  "checkpoint_arms": [
+    {"id": "sft_grpo_fixed4", "init": "same_frozen_sft_checkpoint", "method": "verl_grpo", "group_size": 4, "native_group_filter": false},
+    {"id": "sft_grpo_native_filter", "init": "same_frozen_sft_checkpoint", "method": "verl_grpo_native_filter", "group_size": 4, "native_group_filter": true, "max_num_gen_batches": 4}
+  ],
+  "cpu_only_hypothesis_arm": "adaptive_2_to_8_variable_group_replay_not_wired_to_verl",
+  "training_seeds": [31, 73, 211],
+  "evaluation": {
+    "fixed_splits": ["test", "ood"],
+    "reward_fixtures": 5,
+    "oracle": "sealed_v03_hidden_seed_protocol",
+    "abort_on_new_unsafe_sql": true,
+    "note": "Use matched generated tokens/GPU hours for scientific comparison; no GPU outcomes recorded."
+  }
+}

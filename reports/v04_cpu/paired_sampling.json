@@ -1,0 +1,61 @@
+{
+  "experiment": "v04_frozen_reward_tape_CPU_DIAGNOSTICS_ONLY",
+  "profiles": 144,
+  "rollout_budget_each": 576,
+  "repetitions": 80,
+  "seed": 2026,
+  "strategy_means": {
+    "fixed": {
+      "rollouts_used": 576.0,
+      "unused_rollouts": 0.0,
+      "task_coverage": 144.0,
+      "informative_tasks": 79.4,
+      "informative_per_100_rollouts": 13.7847,
+      "informative_share_of_covered": 0.5514,
+      "unsafe_rate": 0.0756
+    },
+    "large_fixed": {
+      "rollouts_used": 576.0,
+      "unused_rollouts": 0.0,
+      "task_coverage": 72.0,
+      "informative_tasks": 51.025,
+      "informative_per_100_rollouts": 8.8585,
+      "informative_share_of_covered": 0.7087,
+      "unsafe_rate": 0.0756
+    },
+    "adaptive": {
+      "rollouts_used": 576.0,
+      "unused_rollouts": 0.0,
+      "task_coverage": 144.0,
+      "informative_tasks": 92.8125,
+      "informative_per_100_rollouts": 16.1133,
+      "informative_share_of_covered": 0.6445,
+      "unsafe_rate": 0.059
+    }
+  },
+  "paired_differences": [
+    {
+      "candidate": "adaptive",
+      "baseline": "fixed",
+      "mean_informative_task_difference": 13.4125,
+      "empirical_95pct_range": [
+        8,
+        20
+      ],
+      "candidate_wins": 80,
+      "ties": 0
+    },
+    {
+      "candidate": "adaptive",
+      "baseline": "large_fixed",
+      "mean_informative_task_difference": 41.7875,
+      "empirical_95pct_range": [
+        31,
+        49
+      ],
+      "candidate_wins": 80,
+      "ties": 0
+    }
+  ],
+  "disclaimer": "Rewards are generated from fixed latent probabilities, not a language model. Variable-length groups are NOT wired into AGL/verl. This does not show policy learning, convergence or downstream accuracy."
+}

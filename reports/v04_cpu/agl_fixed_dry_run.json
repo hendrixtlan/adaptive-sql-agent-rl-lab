@@ -1,0 +1,17 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "train_rows": 144,
+  "val_rows": 48,
+  "group_size": 4,
+  "batch": 8,
+  "native_group_filter": false,
+  "native_filter_metric": "reward",
+  "max_gen_batches": 4,
+  "adaptive_cpu_scheduler_connected": false,
+  "stage": "reasoning",
+  "curriculum_fingerprint": "074e7e398d5364d06de66a1ea43de85138f27b566dfc76915ae451d9388612ef",
+  "reward": "five_secret_seed_verification",
+  "agent_class": "sqlrl.rollout_agent.OracleSeparatedAgent",
+  "gold_in_rollout": false,
+  "status": "dry_run_ONLY_no_training"
+}

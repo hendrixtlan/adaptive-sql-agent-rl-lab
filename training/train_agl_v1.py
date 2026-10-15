@@ -22,11 +22,14 @@ def training_rows(path: str) -> list[dict[str, str]]:
     ]
 
 
-def build_config(model: str, gateway: str, key: str, batch: int = 8, group_size: int = 4):
+def build_config(model: str, gateway: str, key: str, batch: int = 8, group_size: int = 4,
+                 *, native_group_filter: bool = False, max_gen_batches: int = 4):
     """Follow upstream Agent Lightning v1.0 run_ppo/Hydra configuration pattern."""
     from hydra import compose, initialize_config_dir
     from omegaconf import OmegaConf
 
+    if max_gen_batches < 1:
+        raise ValueError("max_gen_batches must be >= 1 (bounded compute)")
     config_dir = str(importlib.resources.files("agentlightning.verl"))
     with initialize_config_dir(config_dir=config_dir, version_base=None):
         base = compose(config_name="config")
@@ -35,6 +38,11 @@ def build_config(model: str, gateway: str, key: str, batch: int = 8, group_size:
             "adv_estimator": "grpo",
             "use_kl_in_reward": False,
             "enable_rollout_level_advantage": True,
+            "filter_groups": {
+                "enable": native_group_filter,
+                "metric": "reward",
+                "max_num_gen_batches": max_gen_batches,
+            },
         },
         "data": {"train_batch_size": batch, "max_prompt_length": 2048,
                  "max_response_length": 512},
@@ -85,10 +93,16 @@ def main() -> None:
     parser.add_argument("--gateway", default=os.environ.get("AGL_GATEWAY_URL", "http://127.0.0.1:8181"))
     parser.add_argument("--batch", type=int, default=8)
     parser.add_argument("--group-size", type=int, default=4)
+    parser.add_argument("--native-group-filter", action="store_true",
+                        help="Use upstream verl dynamic group filtering; not the CPU adaptive scheduler")
+    parser.add_argument("--max-gen-batches", type=int, default=4,
+                        help="Hard generation batch cap when native filtering is enabled")
     parser.add_argument("--stage", choices=("foundation", "joins", "reasoning"), default="reasoning",
                         help="Curriculum stage (stage 1 basic; stage 2 +joins; stage 3 all)")
     parser.add_argument("--dry-run", action="store_true", help="Print dataset sizes and compatibility checks; no GPU packages needed")
     args = parser.parse_args()
+    if args.max_gen_batches < 1:
+        parser.error("--max-gen-batches must be >= 1 to cap regeneration")
     if args.group_size < 2 or args.batch < 1:
         parser.error("GRPO requires --group-size >= 2 and --batch >= 1")
     from sqlrl.tasks import load_tasks
@@ -103,6 +117,10 @@ def main() -> None:
     if args.dry_run:
         print(json.dumps({"model": args.model, "train_rows": len(train), "val_rows": len(val),
                           "group_size": args.group_size, "batch": args.batch,
+                          "native_group_filter": args.native_group_filter,
+                          "native_filter_metric": "reward",
+                          "max_gen_batches": args.max_gen_batches,
+                          "adaptive_cpu_scheduler_connected": False,
                           "stage": args.stage, "curriculum_fingerprint": curriculum_manifest(train_tasks)["fingerprint"],
                           "reward": "five_secret_seed_verification",
                           "agent_class": "sqlrl.rollout_agent.OracleSeparatedAgent",
@@ -117,7 +135,9 @@ def main() -> None:
         parser.error("Start private reward server and set SQLRL_REWARD_URL and SQLRL_REWARD_TOKEN")
     if reward_url not in {"http://127.0.0.1:8765", "http://localhost:8765"}:
         parser.error("v0.3 local experiment requires loopback reward service port 8765")
-    config = build_config(args.model, args.gateway, key, args.batch, args.group_size)
+    config = build_config(args.model, args.gateway, key, args.batch, args.group_size,
+                          native_group_filter=args.native_group_filter,
+                          max_gen_batches=args.max_gen_batches)
     from agentlightning.verl.entrypoint import run_ppo
     run_ppo(config, train_dataset=train, val_dataset=val)
 
