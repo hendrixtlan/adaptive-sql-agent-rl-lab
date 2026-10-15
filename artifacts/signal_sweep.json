@@ -1,0 +1,176 @@
+{
+  "run_type": "synthetic_binary_reward_signal_DIAGNOSTIC_NO_TRAINING",
+  "n_groups_per_case": 2500,
+  "seed": 2026,
+  "results": [
+    {
+      "correctness_probability": 0.05,
+      "group_size": 2,
+      "observed_zero_variance_rate": 0.9108,
+      "theoretical_zero_variance_rate": 0.905
+    },
+    {
+      "correctness_probability": 0.05,
+      "group_size": 4,
+      "observed_zero_variance_rate": 0.8064,
+      "theoretical_zero_variance_rate": 0.81451
+    },
+    {
+      "correctness_probability": 0.05,
+      "group_size": 8,
+      "observed_zero_variance_rate": 0.6636,
+      "theoretical_zero_variance_rate": 0.66342
+    },
+    {
+      "correctness_probability": 0.05,
+      "group_size": 16,
+      "observed_zero_variance_rate": 0.4464,
+      "theoretical_zero_variance_rate": 0.44013
+    },
+    {
+      "correctness_probability": 0.1,
+      "group_size": 2,
+      "observed_zero_variance_rate": 0.8244,
+      "theoretical_zero_variance_rate": 0.82
+    },
+    {
+      "correctness_probability": 0.1,
+      "group_size": 4,
+      "observed_zero_variance_rate": 0.656,
+      "theoretical_zero_variance_rate": 0.6562
+    },
+    {
+      "correctness_probability": 0.1,
+      "group_size": 8,
+      "observed_zero_variance_rate": 0.4584,
+      "theoretical_zero_variance_rate": 0.43047
+    },
+    {
+      "correctness_probability": 0.1,
+      "group_size": 16,
+      "observed_zero_variance_rate": 0.1872,
+      "theoretical_zero_variance_rate": 0.1853
+    },
+    {
+      "correctness_probability": 0.25,
+      "group_size": 2,
+      "observed_zero_variance_rate": 0.6236,
+      "theoretical_zero_variance_rate": 0.625
+    },
+    {
+      "correctness_probability": 0.25,
+      "group_size": 4,
+      "observed_zero_variance_rate": 0.3028,
+      "theoretical_zero_variance_rate": 0.32031
+    },
+    {
+      "correctness_probability": 0.25,
+      "group_size": 8,
+      "observed_zero_variance_rate": 0.0956,
+      "theoretical_zero_variance_rate": 0.10013
+    },
+    {
+      "correctness_probability": 0.25,
+      "group_size": 16,
+      "observed_zero_variance_rate": 0.0132,
+      "theoretical_zero_variance_rate": 0.01002
+    },
+    {
+      "correctness_probability": 0.5,
+      "group_size": 2,
+      "observed_zero_variance_rate": 0.51,
+      "theoretical_zero_variance_rate": 0.5
+    },
+    {
+      "correctness_probability": 0.5,
+      "group_size": 4,
+      "observed_zero_variance_rate": 0.1336,
+      "theoretical_zero_variance_rate": 0.125
+    },
+    {
+      "correctness_probability": 0.5,
+      "group_size": 8,
+      "observed_zero_variance_rate": 0.0104,
+      "theoretical_zero_variance_rate": 0.00781
+    },
+    {
+      "correctness_probability": 0.5,
+      "group_size": 16,
+      "observed_zero_variance_rate": 0.0,
+      "theoretical_zero_variance_rate": 3e-05
+    },
+    {
+      "correctness_probability": 0.75,
+      "group_size": 2,
+      "observed_zero_variance_rate": 0.6252,
+      "theoretical_zero_variance_rate": 0.625
+    },
+    {
+      "correctness_probability": 0.75,
+      "group_size": 4,
+      "observed_zero_variance_rate": 0.3208,
+      "theoretical_zero_variance_rate": 0.32031
+    },
+    {
+      "correctness_probability": 0.75,
+      "group_size": 8,
+      "observed_zero_variance_rate": 0.0948,
+      "theoretical_zero_variance_rate": 0.10013
+    },
+    {
+      "correctness_probability": 0.75,
+      "group_size": 16,
+      "observed_zero_variance_rate": 0.008,
+      "theoretical_zero_variance_rate": 0.01002
+    },
+    {
+      "correctness_probability": 0.9,
+      "group_size": 2,
+      "observed_zero_variance_rate": 0.8284,
+      "theoretical_zero_variance_rate": 0.82
+    },
+    {
+      "correctness_probability": 0.9,
+      "group_size": 4,
+      "observed_zero_variance_rate": 0.6536,
+      "theoretical_zero_variance_rate": 0.6562
+    },
+    {
+      "correctness_probability": 0.9,
+      "group_size": 8,
+      "observed_zero_variance_rate": 0.4304,
+      "theoretical_zero_variance_rate": 0.43047
+    },
+    {
+      "correctness_probability": 0.9,
+      "group_size": 16,
+      "observed_zero_variance_rate": 0.192,
+      "theoretical_zero_variance_rate": 0.1853
+    },
+    {
+      "correctness_probability": 0.95,
+      "group_size": 2,
+      "observed_zero_variance_rate": 0.9088,
+      "theoretical_zero_variance_rate": 0.905
+    },
+    {
+      "correctness_probability": 0.95,
+      "group_size": 4,
+      "observed_zero_variance_rate": 0.8168,
+      "theoretical_zero_variance_rate": 0.81451
+    },
+    {
+      "correctness_probability": 0.95,
+      "group_size": 8,
+      "observed_zero_variance_rate": 0.67,
+      "theoretical_zero_variance_rate": 0.66342
+    },
+    {
+      "correctness_probability": 0.95,
+      "group_size": 16,
+      "observed_zero_variance_rate": 0.4384,
+      "theoretical_zero_variance_rate": 0.44013
+    }
+  ],
+  "note": "A Bernoulli simplification; real model rollouts and multi-valued rewards behave differently."
+}

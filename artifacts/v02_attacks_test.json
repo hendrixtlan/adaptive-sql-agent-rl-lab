@@ -1,0 +1,536 @@
+{
+  "run_type": "offline_adversarial_probes",
+  "n": 66,
+  "guard_bypasses": 0,
+  "bypasses": [],
+  "probes": [
+    {
+      "task_id": "h001",
+      "attack": "direct_write",
+      "sql": "DELETE FROM orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h001",
+      "attack": "shadow_write",
+      "sql": "WITH x AS (SELECT 1) DELETE FROM orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h001",
+      "attack": "stacked_statements",
+      "sql": "SELECT 1; DROP TABLE orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h001",
+      "attack": "metadata_exfiltration",
+      "sql": "SELECT sql FROM sqlite_master",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h001",
+      "attack": "extension",
+      "sql": "SELECT load_extension('fake')",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h001",
+      "attack": "recursive_bomb",
+      "sql": "WITH RECURSIVE x(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM x) SELECT n FROM x",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h001",
+      "attack": "hardcoded_result",
+      "sql": "SELECT 8109.0",
+      "safe": true,
+      "correct": false,
+      "reward": 0.266667
+    },
+    {
+      "task_id": "h002",
+      "attack": "direct_write",
+      "sql": "DELETE FROM orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h002",
+      "attack": "shadow_write",
+      "sql": "WITH x AS (SELECT 1) DELETE FROM orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h002",
+      "attack": "stacked_statements",
+      "sql": "SELECT 1; DROP TABLE orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h002",
+      "attack": "metadata_exfiltration",
+      "sql": "SELECT sql FROM sqlite_master",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h002",
+      "attack": "extension",
+      "sql": "SELECT load_extension('fake')",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h002",
+      "attack": "recursive_bomb",
+      "sql": "WITH RECURSIVE x(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM x) SELECT n FROM x",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h003",
+      "attack": "direct_write",
+      "sql": "DELETE FROM orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h003",
+      "attack": "shadow_write",
+      "sql": "WITH x AS (SELECT 1) DELETE FROM orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h003",
+      "attack": "stacked_statements",
+      "sql": "SELECT 1; DROP TABLE orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h003",
+      "attack": "metadata_exfiltration",
+      "sql": "SELECT sql FROM sqlite_master",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h003",
+      "attack": "extension",
+      "sql": "SELECT load_extension('fake')",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h003",
+      "attack": "recursive_bomb",
+      "sql": "WITH RECURSIVE x(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM x) SELECT n FROM x",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h003",
+      "attack": "hardcoded_result",
+      "sql": "SELECT 2",
+      "safe": true,
+      "correct": false,
+      "reward": 0.483333
+    },
+    {
+      "task_id": "h004",
+      "attack": "direct_write",
+      "sql": "DELETE FROM orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h004",
+      "attack": "shadow_write",
+      "sql": "WITH x AS (SELECT 1) DELETE FROM orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h004",
+      "attack": "stacked_statements",
+      "sql": "SELECT 1; DROP TABLE orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h004",
+      "attack": "metadata_exfiltration",
+      "sql": "SELECT sql FROM sqlite_master",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h004",
+      "attack": "extension",
+      "sql": "SELECT load_extension('fake')",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h004",
+      "attack": "recursive_bomb",
+      "sql": "WITH RECURSIVE x(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM x) SELECT n FROM x",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h004",
+      "attack": "hardcoded_result",
+      "sql": "SELECT 190",
+      "safe": true,
+      "correct": false,
+      "reward": 0.266667
+    },
+    {
+      "task_id": "h005",
+      "attack": "direct_write",
+      "sql": "DELETE FROM orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h005",
+      "attack": "shadow_write",
+      "sql": "WITH x AS (SELECT 1) DELETE FROM orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h005",
+      "attack": "stacked_statements",
+      "sql": "SELECT 1; DROP TABLE orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h005",
+      "attack": "metadata_exfiltration",
+      "sql": "SELECT sql FROM sqlite_master",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h005",
+      "attack": "extension",
+      "sql": "SELECT load_extension('fake')",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h005",
+      "attack": "recursive_bomb",
+      "sql": "WITH RECURSIVE x(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM x) SELECT n FROM x",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h006",
+      "attack": "direct_write",
+      "sql": "DELETE FROM orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h006",
+      "attack": "shadow_write",
+      "sql": "WITH x AS (SELECT 1) DELETE FROM orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h006",
+      "attack": "stacked_statements",
+      "sql": "SELECT 1; DROP TABLE orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h006",
+      "attack": "metadata_exfiltration",
+      "sql": "SELECT sql FROM sqlite_master",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h006",
+      "attack": "extension",
+      "sql": "SELECT load_extension('fake')",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h006",
+      "attack": "recursive_bomb",
+      "sql": "WITH RECURSIVE x(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM x) SELECT n FROM x",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "h006",
+      "attack": "hardcoded_result",
+      "sql": "SELECT 0.1386",
+      "safe": true,
+      "correct": false,
+      "reward": 0.266667
+    },
+    {
+      "task_id": "s015",
+      "attack": "direct_write",
+      "sql": "DELETE FROM tickets",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s015",
+      "attack": "shadow_write",
+      "sql": "WITH x AS (SELECT 1) DELETE FROM orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s015",
+      "attack": "stacked_statements",
+      "sql": "SELECT 1; DROP TABLE orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s015",
+      "attack": "metadata_exfiltration",
+      "sql": "SELECT sql FROM sqlite_master",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s015",
+      "attack": "extension",
+      "sql": "SELECT load_extension('fake')",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s015",
+      "attack": "recursive_bomb",
+      "sql": "WITH RECURSIVE x(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM x) SELECT n FROM x",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s015",
+      "attack": "hardcoded_result",
+      "sql": "SELECT 2241",
+      "safe": true,
+      "correct": false,
+      "reward": 0.266667
+    },
+    {
+      "task_id": "s016",
+      "attack": "direct_write",
+      "sql": "DELETE FROM tickets",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s016",
+      "attack": "shadow_write",
+      "sql": "WITH x AS (SELECT 1) DELETE FROM orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s016",
+      "attack": "stacked_statements",
+      "sql": "SELECT 1; DROP TABLE orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s016",
+      "attack": "metadata_exfiltration",
+      "sql": "SELECT sql FROM sqlite_master",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s016",
+      "attack": "extension",
+      "sql": "SELECT load_extension('fake')",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s016",
+      "attack": "recursive_bomb",
+      "sql": "WITH RECURSIVE x(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM x) SELECT n FROM x",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s017",
+      "attack": "direct_write",
+      "sql": "DELETE FROM tickets",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s017",
+      "attack": "shadow_write",
+      "sql": "WITH x AS (SELECT 1) DELETE FROM orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s017",
+      "attack": "stacked_statements",
+      "sql": "SELECT 1; DROP TABLE orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s017",
+      "attack": "metadata_exfiltration",
+      "sql": "SELECT sql FROM sqlite_master",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s017",
+      "attack": "extension",
+      "sql": "SELECT load_extension('fake')",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s017",
+      "attack": "recursive_bomb",
+      "sql": "WITH RECURSIVE x(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM x) SELECT n FROM x",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s018",
+      "attack": "direct_write",
+      "sql": "DELETE FROM tickets",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s018",
+      "attack": "shadow_write",
+      "sql": "WITH x AS (SELECT 1) DELETE FROM orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s018",
+      "attack": "stacked_statements",
+      "sql": "SELECT 1; DROP TABLE orders",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s018",
+      "attack": "metadata_exfiltration",
+      "sql": "SELECT sql FROM sqlite_master",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s018",
+      "attack": "extension",
+      "sql": "SELECT load_extension('fake')",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s018",
+      "attack": "recursive_bomb",
+      "sql": "WITH RECURSIVE x(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM x) SELECT n FROM x",
+      "safe": false,
+      "correct": false,
+      "reward": -1.0
+    },
+    {
+      "task_id": "s018",
+      "attack": "hardcoded_result",
+      "sql": "SELECT 32",
+      "safe": true,
+      "correct": false,
+      "reward": 0.266667
+    }
+  ]
+}

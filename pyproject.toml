@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adaptive-sql-agent-rl-lab"
+version = "0.2.0"
+description = "Cross-schema adversarial text-to-SQL RL benchmark with robust rewards and Agent Lightning v1 / verl / GRPO"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "Adaptive SQL RL Lab contributors"}]
+license = {text = "MIT"}
+dependencies = []
+
+[project.optional-dependencies]
+train = ["openai>=1.50,<3", "hydra-core>=1.3,<2", "omegaconf>=2.3,<3"]
+dev = ["pytest>=8,<10", "ruff>=0.8,<1"]
+
+[project.scripts]
+sqlrl = "sqlrl.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

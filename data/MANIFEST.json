@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "split_manifest": [
+    {
+      "file": "data/ood.jsonl",
+      "records": 10,
+      "sha256": "ee7f91206fc0c08f0313b007ad667c5e0470386246f38f0ca55d650d61d91d06"
+    },
+    {
+      "file": "data/test.jsonl",
+      "records": 10,
+      "sha256": "66a4e3ab605c0262c5c0bb5faa1fb4b813b12c159adde7fee76e5b43f14a7f5c"
+    },
+    {
+      "file": "data/train.jsonl",
+      "records": 26,
+      "sha256": "ae2f3d12db359541dad2454335f2a89a594c01fa8430f8f63ded3fe128ee591d"
+    },
+    {
+      "file": "data/val.jsonl",
+      "records": 10,
+      "sha256": "6a6a16aa78523cbb52a902d1d361d3fbc1dec97aace71ac0fcc97ffbebce8ee5"
+    }
+  ]
+}

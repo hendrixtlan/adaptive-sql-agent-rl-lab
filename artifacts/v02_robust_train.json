@@ -1,0 +1,511 @@
+{
+  "run_type": "baseline_eval_robust",
+  "evaluation_protocol": "three_seed_strict",
+  "timestamp_utc": "2026-10-15T04:29:45.258170+00:00",
+  "split_name": "train",
+  "dataset_fingerprint": "ae2f3d12db359541dad2454335f2a89a594c01fa8430f8f63ded3fe128ee591d",
+  "model": "deterministic_nonlearning",
+  "n": 26,
+  "accuracy": 0.15384615384615385,
+  "mean_reward": -0.2076923076923077,
+  "by_domain": {
+    "retail": {
+      "n": 16,
+      "accuracy": 0.25
+    },
+    "support": {
+      "n": 10,
+      "accuracy": 0.0
+    }
+  },
+  "results": [
+    {
+      "task_id": "t001",
+      "database": "retail",
+      "sql": "SELECT COUNT(*) FROM orders WHERE status='completed'",
+      "attempts": 1,
+      "score": {
+        "task_id": "t001",
+        "database": "retail",
+        "reward": 1.0,
+        "correct": true,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 3,
+        "total_instances": 3,
+        "errors": [],
+        "mean_latency_ms": 0.03558233337723019
+      }
+    },
+    {
+      "task_id": "t002",
+      "database": "retail",
+      "sql": "SELECT ROUND(SUM(oi.quantity*oi.unit_price),2) FROM orders o JOIN order_items oi ON o.order_id=oi.order_id WHERE o.status='completed'",
+      "attempts": 1,
+      "score": {
+        "task_id": "t002",
+        "database": "retail",
+        "reward": 1.0,
+        "correct": true,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 3,
+        "total_instances": 3,
+        "errors": [],
+        "mean_latency_ms": 0.0852083333408397
+      }
+    },
+    {
+      "task_id": "t003",
+      "database": "retail",
+      "sql": "SELECT status, COUNT(*) FROM orders GROUP BY status",
+      "attempts": 1,
+      "score": {
+        "task_id": "t003",
+        "database": "retail",
+        "reward": 1.0,
+        "correct": true,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 3,
+        "total_instances": 3,
+        "errors": [],
+        "mean_latency_ms": 0.05509433333372726
+      }
+    },
+    {
+      "task_id": "t004",
+      "database": "retail",
+      "sql": "SELECT region, COUNT(*) FROM customers GROUP BY region",
+      "attempts": 1,
+      "score": {
+        "task_id": "t004",
+        "database": "retail",
+        "reward": 1.0,
+        "correct": true,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 3,
+        "total_instances": 3,
+        "errors": [],
+        "mean_latency_ms": 0.03093833337667699
+      }
+    },
+    {
+      "task_id": "t005",
+      "database": "retail",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "t005",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [],
+        "mean_latency_ms": 0.015035666668457756
+      }
+    },
+    {
+      "task_id": "t006",
+      "database": "retail",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "t006",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [],
+        "mean_latency_ms": 0.015736666682641953
+      }
+    },
+    {
+      "task_id": "t007",
+      "database": "retail",
+      "sql": "SELECT ROUND(SUM(oi.quantity*oi.unit_price),2) FROM orders o JOIN order_items oi ON o.order_id=oi.order_id WHERE o.status='completed'",
+      "attempts": 1,
+      "score": {
+        "task_id": "t007",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [],
+        "mean_latency_ms": 0.08214100000714097
+      }
+    },
+    {
+      "task_id": "t008",
+      "database": "retail",
+      "sql": "SELECT COUNT(*) FROM orders WHERE status='completed'",
+      "attempts": 1,
+      "score": {
+        "task_id": "t008",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [],
+        "mean_latency_ms": 0.030548000002757664
+      }
+    },
+    {
+      "task_id": "t009",
+      "database": "retail",
+      "sql": "SELECT COUNT(*) FROM orders WHERE status='completed'",
+      "attempts": 1,
+      "score": {
+        "task_id": "t009",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [],
+        "mean_latency_ms": 0.02990733332808304
+      }
+    },
+    {
+      "task_id": "t010",
+      "database": "retail",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "t010",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [],
+        "mean_latency_ms": 0.016781333329163317
+      }
+    },
+    {
+      "task_id": "t011",
+      "database": "retail",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "t011",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [],
+        "mean_latency_ms": 0.016788000001118537
+      }
+    },
+    {
+      "task_id": "t012",
+      "database": "retail",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "t012",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [],
+        "mean_latency_ms": 0.01721199998883094
+      }
+    },
+    {
+      "task_id": "t013",
+      "database": "retail",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "t013",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [],
+        "mean_latency_ms": 0.016196999960508645
+      }
+    },
+    {
+      "task_id": "t014",
+      "database": "retail",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "t014",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [],
+        "mean_latency_ms": 0.01596333330174578
+      }
+    },
+    {
+      "task_id": "t015",
+      "database": "retail",
+      "sql": "SELECT COUNT(*) FROM orders WHERE status='completed'",
+      "attempts": 1,
+      "score": {
+        "task_id": "t015",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [],
+        "mean_latency_ms": 0.033996666653971865
+      }
+    },
+    {
+      "task_id": "t016",
+      "database": "retail",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "t016",
+        "database": "retail",
+        "reward": 0.05,
+        "correct": false,
+        "safe": true,
+        "executable": true,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [],
+        "mean_latency_ms": 0.01699466668014793
+      }
+    },
+    {
+      "task_id": "s001",
+      "database": "support",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "s001",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "s002",
+      "database": "support",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "s002",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "s003",
+      "database": "support",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "s003",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "s004",
+      "database": "support",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "s004",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "s005",
+      "database": "support",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "s005",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "s006",
+      "database": "support",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "s006",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "s007",
+      "database": "support",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "s007",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "s008",
+      "database": "support",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "s008",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "s009",
+      "database": "support",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "s009",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    },
+    {
+      "task_id": "s010",
+      "database": "support",
+      "sql": "SELECT COUNT(*) FROM orders",
+      "attempts": 1,
+      "score": {
+        "task_id": "s010",
+        "database": "support",
+        "reward": -1.0,
+        "correct": false,
+        "safe": false,
+        "executable": false,
+        "correct_instances": 0,
+        "total_instances": 3,
+        "errors": [
+          "SQL rejected or execution failed: OperationalError"
+        ],
+        "mean_latency_ms": 0.0
+      }
+    }
+  ]
+}

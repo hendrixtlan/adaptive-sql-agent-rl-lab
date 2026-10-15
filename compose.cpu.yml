@@ -1,0 +1,16 @@
+services:
+  cpu-validation:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.cpu
+    network_mode: none
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m
+    mem_limit: 1g
+    pids_limit: 64
+    cpus: "2.0"
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    environment:
+      PYTHONDONTWRITEBYTECODE: "1"

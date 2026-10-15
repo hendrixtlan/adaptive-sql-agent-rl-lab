@@ -1,0 +1,587 @@
+{
+  "run_type": "cpu_group_diagnostics_NO_WEIGHT_UPDATES",
+  "n_groups": 26,
+  "zero_variance_groups": 0,
+  "group_stats": {
+    "total_groups": 26,
+    "zero_variance": 0,
+    "zero_variance_rate": 0.0,
+    "mean_group_reward": -0.14038461538461539,
+    "mean_group_std": 0.7866725964411414,
+    "warning": "No policy update in this CPU diagnostics module"
+  },
+  "groups": [
+    {
+      "task_id": "t001",
+      "rewards": [
+        1.0,
+        0.05,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        0.8932209057802996,
+        -0.2573687355638151,
+        0.8932209057802996,
+        -1.5290730759967839
+      ],
+      "zero_variance": false,
+      "correct": [
+        true,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "t002",
+      "rewards": [
+        1.0,
+        0.05,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        0.8932209057802996,
+        -0.2573687355638151,
+        0.8932209057802996,
+        -1.5290730759967839
+      ],
+      "zero_variance": false,
+      "correct": [
+        true,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "t003",
+      "rewards": [
+        1.0,
+        0.05,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        0.8932209057802996,
+        -0.2573687355638151,
+        0.8932209057802996,
+        -1.5290730759967839
+      ],
+      "zero_variance": false,
+      "correct": [
+        true,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "t004",
+      "rewards": [
+        1.0,
+        0.05,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        0.8932209057802996,
+        -0.2573687355638151,
+        0.8932209057802996,
+        -1.5290730759967839
+      ],
+      "zero_variance": false,
+      "correct": [
+        true,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "t005",
+      "rewards": [
+        0.05,
+        0.05,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        0.03533321272937121,
+        0.03533321272937121,
+        1.3779952964454774,
+        -1.4486617219042197
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "t006",
+      "rewards": [
+        0.05,
+        0.05,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        0.03533321272937121,
+        0.03533321272937121,
+        1.3779952964454774,
+        -1.4486617219042197
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "t007",
+      "rewards": [
+        0.05,
+        0.05,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        0.03533321272937121,
+        0.03533321272937121,
+        1.3779952964454774,
+        -1.4486617219042197
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "t008",
+      "rewards": [
+        0.05,
+        0.05,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        0.03533321272937121,
+        0.03533321272937121,
+        1.3779952964454774,
+        -1.4486617219042197
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "t009",
+      "rewards": [
+        0.05,
+        0.05,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        0.03533321272937121,
+        0.03533321272937121,
+        1.3779952964454774,
+        -1.4486617219042197
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "t010",
+      "rewards": [
+        0.05,
+        0.05,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        0.03533321272937121,
+        0.03533321272937121,
+        1.3779952964454774,
+        -1.4486617219042197
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "t011",
+      "rewards": [
+        0.05,
+        0.05,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        0.03533321272937121,
+        0.03533321272937121,
+        1.3779952964454774,
+        -1.4486617219042197
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "t012",
+      "rewards": [
+        0.05,
+        0.05,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        0.03533321272937121,
+        0.03533321272937121,
+        1.3779952964454774,
+        -1.4486617219042197
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "t013",
+      "rewards": [
+        0.05,
+        0.05,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        0.03533321272937121,
+        0.03533321272937121,
+        1.3779952964454774,
+        -1.4486617219042197
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "t014",
+      "rewards": [
+        0.05,
+        0.05,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        0.03533321272937121,
+        0.03533321272937121,
+        1.3779952964454774,
+        -1.4486617219042197
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "t015",
+      "rewards": [
+        0.05,
+        0.05,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        0.03533321272937121,
+        0.03533321272937121,
+        1.3779952964454774,
+        -1.4486617219042197
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "t016",
+      "rewards": [
+        0.05,
+        0.05,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        0.03533321272937121,
+        0.03533321272937121,
+        1.3779952964454774,
+        -1.4486617219042197
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "s001",
+      "rewards": [
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        -0.5773496025237289,
+        -0.5773496025237289,
+        1.7320488075711868,
+        -0.5773496025237289
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "s002",
+      "rewards": [
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        -0.5773496025237289,
+        -0.5773496025237289,
+        1.7320488075711868,
+        -0.5773496025237289
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "s003",
+      "rewards": [
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        -0.5773496025237289,
+        -0.5773496025237289,
+        1.7320488075711868,
+        -0.5773496025237289
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "s004",
+      "rewards": [
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        -0.5773496025237289,
+        -0.5773496025237289,
+        1.7320488075711868,
+        -0.5773496025237289
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "s005",
+      "rewards": [
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        -0.5773496025237289,
+        -0.5773496025237289,
+        1.7320488075711868,
+        -0.5773496025237289
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "s006",
+      "rewards": [
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        -0.5773496025237289,
+        -0.5773496025237289,
+        1.7320488075711868,
+        -0.5773496025237289
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "s007",
+      "rewards": [
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        -0.5773496025237289,
+        -0.5773496025237289,
+        1.7320488075711868,
+        -0.5773496025237289
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "s008",
+      "rewards": [
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        -0.5773496025237289,
+        -0.5773496025237289,
+        1.7320488075711868,
+        -0.5773496025237289
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "s009",
+      "rewards": [
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        -0.5773496025237289,
+        -0.5773496025237289,
+        1.7320488075711868,
+        -0.5773496025237289
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "s010",
+      "rewards": [
+        -1.0,
+        -1.0,
+        1.0,
+        -1.0
+      ],
+      "advantages": [
+        -0.5773496025237289,
+        -0.5773496025237289,
+        1.7320488075711868,
+        -0.5773496025237289
+      ],
+      "zero_variance": false,
+      "correct": [
+        false,
+        false,
+        true,
+        false
+      ]
+    }
+  ]
+}
